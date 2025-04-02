@@ -1,0 +1,316 @@
+$enable-gradients: true;
+$enable-shadows: true;
+$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+$border-radius: .4rem;
+$primary: #1b063b;
+$font-family-base: 'Courier New', Courier, monospace !default;
+
+@import "bootstrap/scss/bootstrap";
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 100%;
+    background: -moz-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
+    background: -webkit-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
+    background: linear-gradient(to bottom, #002e3e 0%, #fbe4bf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002e3e', endColorstr='#fbe4bf', GradientType=0);
+}
+
+img{
+    max-width: 100%;
+}
+
+.apresenta {
+    width: 58%;
+    height: 58vh;
+    margin: 0px auto 40px auto;
+    padding-bottom: 40px;
+    display: block;
+    background: #fefefede;
+    animation: portifa 3s linear;
+    animation-timeline: view();
+    h1 {
+        text-indent: -90000px;
+        display: block;
+        max-width: 375px;
+        height: 333px;
+        margin: 0 auto;
+        background: url('../tauk-design.png') no-repeat scroll 0 0 transparent;
+        border-radius: $border-radius;
+        will-change: filter;
+        transition: filter 900ms;
+        filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67));
+        animation-delay: 20s;
+        
+        &:hover {
+            opacity: 0.85;
+            filter: drop-shadow(0 0 2em rgba(2, 2, 39, 0.67));
+        }
+    }
+    .caxa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.bio-text {
+    font-size: 1em;
+    letter-spacing: -0.6px;
+    margin: 21px 5px 5px 5px;
+    word-spacing: 1px;
+    text-align: left;
+    line-height: 1.8em;
+}
+
+#topo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    margin: 40px auto;
+    opacity: 0;
+    animation: elemvisu ease-in-out;
+    animation-timeline: scroll();
+}
+
+.fechar {
+    img {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: block;
+        margin: 40px auto;
+        width: 50px;
+        height: 50px;
+
+        opacity:0;
+        animation: elemvisu ease-in-out;
+        animation-timeline: scroll();
+    }
+}
+
+.panel {
+    padding-top: 40px;
+    a {
+        color: $white;
+        h4 {
+            font-size: 1.473em;
+            font-weight: bold;
+            margin: 20px 0 5px;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.panel-wrapper {
+    span {
+        display: block;
+        margin: 10px;
+    }
+    img{
+        opacity: .15;
+        animation: fadeimg ease-in-out;
+        animation-range: entry-crossing cover;
+        border-radius: $border-radius;
+        animation-timeline: view();
+    }
+}
+
+.slider {
+    background: #061b22;
+    position: relative;
+    color: #fefefe;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.contact-infos {
+    a {
+        display: block;
+        transition: all ease-in-out .2s;
+        opacity: .7;
+        
+        &:hover {
+            transform: scale(1.473);
+            transition: all ease-in-out .2s;
+            opacity: 1;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .apresenta {width: 100%;}
+    .box {
+        width: 100%;
+        height: 50vh;
+        border-radius: 5px;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+    }
+}
+
+.box {
+    width: 100%;
+    height: 50vh;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    opacity: 0;
+    animation-range-start: cover;
+    animation-range-end: cover;
+    animation-range: exit 0% exit 100%;
+    animation: reveal ease-in-out;
+    animation-timeline: view();
+
+  }
+  .box h2 {
+    font-size: 4.3rem;
+    color: #e0ffff;
+  }
+  .box p {
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin: 20px;
+    font-size: 1.473em;
+    color: #e0ffff;
+    font-weight: bold;
+  }
+.box-3{
+    height: 55vh;
+    opacity: .2;
+    animation-range-start: contain;
+    animation-range-end: cover;
+    animation-range: entry 100% exit 100%;
+    animation: fromleft;
+    animation-timeline: view();
+  }
+  
+
+@media (prefers-reduced-motion: no-preference) {
+    .apresenta h1 {
+        &:hover {
+            animation: logo-spin infinite 7s;
+        }
+    }
+}
+
+@keyframes logo-spin {
+    from {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.234) translateY(0);
+        opacity: 0;
+    }
+}
+
+@keyframes portifa {
+    from {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeimg {
+    0% {
+        transform: scale(.7);
+        opacity: 0;
+    }
+    7%{
+        transform: scale(1);
+        opacity: .5;
+    }
+    12%{
+        opacity: 1;
+    }
+    85%{
+        opacity: 1;
+    }
+    88%{
+        transform: scale(1) translateY(0);
+        opacity: .7;
+    }
+    100% {
+        transform: scale(.3) translateY(-100%);
+        opacity: .1;
+    }
+}
+
+@keyframes fromleft {
+    0% {
+        transform: scale(1) translateY(100%);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1) translateY(0);
+        opacity: 0.8;
+
+    }
+    100% {
+        transform: scale(1) translateY(100%);
+        opacity: .4;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        transform: scale(1) translateY(100%);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(90%) translateY(0);
+        opacity: 0.9;
+
+    }
+    100% {
+        transform: scale(1) translateY(100%);
+        opacity: 0;
+    }
+}
+
+.scroller {
+    height: 8px;
+    position: fixed;
+    top: 0%;
+    z-index: 100;
+    background-color:#4e758d;
+    width: 100%;
+    transform: scale(0, 1);
+    transform-origin: left;
+    animation: scroller linear;
+    animation-timeline: scroll();
+}
+@keyframes scroller {
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+  @keyframes elemvisu {
+    0% {
+        transform: scale(0.7) translateY(0);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(.9) translateY(100%);
+        opacity: 1;
+    }
+}
