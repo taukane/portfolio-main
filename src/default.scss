@@ -17,9 +17,13 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002e3e', endColorstr='#fbe4bf', GradientType=0);
 }
 
-img{
-    max-width: 100%;
-}
+
+img  { 
+    image-rendering: optimizeQuality;  
+    -ms-interpolation-mode: bicubic;  
+    max-width: 100%; 
+}     
+    
 
 .apresenta {
     width: 58%;
@@ -40,30 +44,85 @@ img{
         border-radius: $border-radius;
         will-change: filter;
         transition: filter 900ms;
-        filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67));
-        animation-delay: 20s;
-        
+        filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67)); 
         &:hover {
             opacity: 0.85;
             filter: drop-shadow(0 0 2em rgba(2, 2, 39, 0.67));
         }
     }
-    .caxa {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+}
+
+/* @media only screen and (max-width : 768px){
+    #works {
+        img{
+        border:solid 4px #cfe2de;
+        opacity: 1;
+        margin-bottom: 40px;
+        width: 80%;
+        -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
+        filter: sepia(0) hue-rotate(0deg) saturate(100%);
+        }
+    }
+} */
+#works{
+    div{
+        position: relative;
+        top: -100px;
+    }
+    h4{
+        max-width: 250px;
+        position: relative;
+        top: 60px;
+        height: 1px;
+        z-index: -1;
+        margin: 30px;
+        font-size: .89rem;
+        font-weight: 400;
+        color: $light;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        }
+    img{
+        z-index:2;
+        border:solid 4px #cfe2de;
+        opacity: 0.25;
+        filter: sepia(50%) hue-rotate(20deg) saturate(10%);
+        margin: 4px;
+        &:hover{
+            z-index:0;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            filter: sepia(0) hue-rotate(0deg) saturate(100%);
+            opacity: 1;
+            }
+        }
+    hr {
+        background: url('../image/linha.png') repeat scroll 0 0 transparent;
+        border: none;
+        clear: left;
+        display: block;
+        height: 8px;
+        margin: 0 0 20px 18px;
+        width: 95%;
+        transform: rotate(-180deg);
     }
 }
-
-.bio-text {
-    font-size: 1em;
-    letter-spacing: -0.6px;
-    margin: 21px 5px 5px 5px;
-    word-spacing: 1px;
-    text-align: left;
-    line-height: 1.8em;
+.coda-nav-left { 
+left: 20px;    
+position: fixed;
+top: 50%;
+z-index: 999999;	
 }
 
+.coda-nav-right { position: fixed;
+top: 50%;
+z-index: 999999;
+right: 20px; 	
+}
+
+.coda-nav-left a, .coda-nav-right a { display: inline-block; text-align: center; text-decoration: none }
+        
 #topo {
     position: fixed;
     bottom: 20px;
@@ -101,6 +160,7 @@ img{
         }
         &:hover {
             text-decoration: none;
+            transition-duration: 3s;
         }
     }
 }
@@ -153,7 +213,18 @@ img{
         flex-direction: column;
     }
 }
-
+.scroller {
+    height: 8px;
+    position: fixed;
+    top: 0%;
+    z-index: 100;
+    background-color:#4e758d;
+    width: 100%;
+    transform: scale(0, 1);
+    transform-origin: left;
+    animation: scroller linear;
+    animation-timeline: scroll();
+}
 .box {
     width: 100%;
     height: 50vh;
@@ -200,19 +271,23 @@ img{
 @media (prefers-reduced-motion: no-preference) {
     .apresenta h1 {
         &:hover {
-            animation: logo-spin infinite 7s;
+            animation: logo-spin infinite 3s;
         }
     }
 }
 
 @keyframes logo-spin {
-    from {
+    0% {
         transform: scale(1) translateY(0);
         opacity: 1;
     }
-    to {
+    50% {
         transform: scale(1.234) translateY(0);
-        opacity: 0;
+        opacity: .1234;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
     }
 }
 
@@ -282,18 +357,7 @@ img{
     }
 }
 
-.scroller {
-    height: 8px;
-    position: fixed;
-    top: 0%;
-    z-index: 100;
-    background-color:#4e758d;
-    width: 100%;
-    transform: scale(0, 1);
-    transform-origin: left;
-    animation: scroller linear;
-    animation-timeline: scroll();
-}
+
 @keyframes scroller {
     to {
         transform: scale(1, 1);

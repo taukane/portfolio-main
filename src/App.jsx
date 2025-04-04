@@ -96,13 +96,78 @@ function App() {
 					</div>
 				</div>
 			</div>
+			<div className="container-fluid">
+				<div className="row"  id="works">
+					<hr />
+					<div className="col-md-4 col-lg-3 col-12">
+					<h4>Website Interface + Desenvolvimento Laravel</h4>
+						<a href="#anchor"  rel="coda-slider-1">
+						<img src="image/volks-thumb.jpg" alt="Website Interface + Desenvolvimento Laravel" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Website Interface + Desenvolvimento Laravel</h4>
+						<a href="#anchor-1"  rel="coda-slider-1">
+						<img src="image/honda-thumb.jpg" alt="Website Interface + Desenvolvimento Laravel" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Interface Website + Desenvolvimento Wordpress</h4>
+						<a  href="#2" rel="coda-slider-1[group]">
+						<img src="image/cbd-med.jpg" alt="Interface Design + Desenvolvimento Wordpress" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Projeto Gráfico</h4>
+						<a href="#4"  rel="coda-slider-1">
+						<img src="image/curitiba-cultura-peq.jpg" alt="Projeto Gráfico - Curitiba Cultura" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Identidade Visual + Website</h4>
+						<a href="#5"  rel="coda-slider-1">
+						<img src="image/zeta-estaleiro.jpg" alt="Identidade Visual e Website - Zeta Estaleiro" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Direção de Arte</h4>
+						<a href="#anchor-7" rel="coda-slider-1[group]">
+						<img src="image/volvo-ce-facebook.jpg" alt="Direção de Arte - Facebook" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Direção de Arte</h4>
+						<a href="#anchor-7" rel="coda-slider-1[group]">
+						<img src="image/volvo-ce-facebook.jpg" alt="Direção de Arte - Facebook" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Direção de Arte</h4>
+						<a href="#anchor-7" rel="coda-slider-1[group]">
+						<img src="image/volvo-ce-facebook.jpg" alt="Direção de Arte - Facebook" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Direção de Arte</h4>
+						<a href="#anchor-7" rel="coda-slider-1[group]">
+						<img src="image/volvo-ce-facebook.jpg" alt="Direção de Arte - Facebook" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Direção de Arte</h4>
+						<a href="#anchor-7" rel="coda-slider-1[group]">
+						<img src="image/volvo-ce-facebook.jpg" alt="Direção de Arte - Facebook" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Direção de Arte</h4>
+						<a href="#anchor-7" rel="coda-slider-1[group]">
+						<img src="image/volvo-ce-facebook.jpg" alt="Direção de Arte - Facebook" className="img-fluid" /></a>
+					</div>
+					<div className="col-md-4 col-lg-3 col-12">
+						<h4>Direção de Arte</h4>
+						<a href="#anchor-7" rel="coda-slider-1[group]">
+						<img src="image/volvo-ce-facebook.jpg" alt="Direção de Arte - Facebook" className="img-fluid" /></a>
+					</div>
+				</div>
+			</div>
 			<div id="QuickView">
 				<div className="slider text-center rounded shadow-lg">
 					<div className="panel" id="anchor">
 						<div className="panel-wrapper">
 							<a href="#anchor-1">
 								<h4 className="title">Website Interface + Desenvolvimento Laravel</h4>
-								<p>Real Veiculos <small>/ 2022</small></p>
+								<p>Real Veiculos / Volkswagem <small>/ 2022</small></p>
 								<img
 									alt="Website Template"
 									src="image/Volkswagen-layout-site.png"
@@ -134,6 +199,20 @@ function App() {
 								<img
 									alt="Faca para embalagens"
 									src="image/facas-embalagens.png"
+									width={1024}
+									height={auto}
+								/>
+							</a>
+						</div>
+					</div>
+					<div className="panel" id="anchor-2">
+						<div className="panel-wrapper">
+							<a href="#anchor-3">
+								<h4 className="title">Embalagens</h4>
+								<p>Desenvolvimento de embalagens Bulbo Led<small>/ 2020</small></p>
+								<img
+									alt="Faca para embalagens"
+									src="image/cbd-med-layout-home-logo.webp"
 									width={1024}
 									height={auto}
 								/>
@@ -196,6 +275,20 @@ function App() {
 							</a>
 						</div>
 					</div>
+					<div className="panel" id="anchor-5">
+						<div className="panel-wrapper">
+							<a href="#anchor-6">
+								<h4 className="title">Facebook Posts</h4>
+								<span>Roldão Atacadista  <small>/ 2017</small></span>
+								<img
+									alt="Facebook Posts"
+									src="image/curitiba-cultura.jpg"
+									width={1024}
+									height={auto}
+								/>
+							</a>
+						</div>
+					</div>
 					<div className="panel" id="anchor-7">
 						<div className="panel-wrapper">
 							<a href="#anchor-8">
@@ -204,6 +297,20 @@ function App() {
 								<img
 									alt="Marmoraria Florianópolis Redesign de Marca"
 									src="image/marmoraria-florianopolis-2014.jpg"
+									width={1024}
+									height={auto}
+								/>
+							</a>
+						</div>
+					</div>
+					<div className="panel" id="anchor-5">
+						<div className="panel-wrapper">
+							<a href="#anchor-6">
+								<h4 className="title">Facebook Posts</h4>
+								<span>Roldão Atacadista  <small>/ 2017</small></span>
+								<img
+									alt="Facebook Posts"
+									src="image/shopping-total.webp"
 									width={1024}
 									height={auto}
 								/>
@@ -252,6 +359,7 @@ function App() {
 					height={50}
 				/>
 			</a>
+			<div className="coda-nav-left" id="coda-nav-left-1"><a href="#"><img alt="Next" src="image/prev.jpg" /></a></div>
 		</>
 	)
 }
