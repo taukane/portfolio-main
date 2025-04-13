@@ -52,23 +52,9 @@ img  {
     }
 }
 
-/* @media only screen and (max-width : 768px){
-    #works {
-        img{
-        border:solid 4px #cfe2de;
-        opacity: 1;
-        margin-bottom: 40px;
-        width: 80%;
-        -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
-        filter: sepia(0) hue-rotate(0deg) saturate(100%);
-        }
-    }
-} */
+
 #works{
-    div{
-        position: relative;
-        top: -100px;
-    }
+
     h4{
         max-width: 250px;
         position: relative;
@@ -83,10 +69,13 @@ img  {
         }
     img{
         z-index:2;
-        border:solid 4px #cfe2de;
+        border-width: 4px;
+        border-color:  #cfe2de;
+        border-style: dashed;
         opacity: 0.25;
         filter: sepia(50%) hue-rotate(20deg) saturate(10%);
         margin: 4px;
+        border-radius: $border-radius;
         &:hover{
             z-index:0;
             -moz-transition: all .3s ease-in-out;
@@ -104,25 +93,9 @@ img  {
         display: block;
         height: 8px;
         margin: 0 0 20px 18px;
-        width: 95%;
-        transform: rotate(-180deg);
     }
 }
-.coda-nav-left { 
-left: 20px;    
-position: fixed;
-top: 50%;
-z-index: 999999;	
-}
-
-.coda-nav-right { position: fixed;
-top: 50%;
-z-index: 999999;
-right: 20px; 	
-}
-
-.coda-nav-left a, .coda-nav-right a { display: inline-block; text-align: center; text-decoration: none }
-        
+      
 #topo {
     position: fixed;
     bottom: 20px;
@@ -149,43 +122,26 @@ right: 20px;
     }
 }
 
-.panel {
-    padding-top: 40px;
-    a {
+.swiper{
+    h4, p{
         color: $white;
-        h4 {
-            font-size: 1.473em;
-            font-weight: bold;
-            margin: 20px 0 5px;
-        }
-        &:hover {
-            text-decoration: none;
-            transition-duration: 3s;
-        }
     }
 }
-
-.panel-wrapper {
-    span {
-        display: block;
-        margin: 10px;
-    }
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+  .swiper-slide-thumb-active{
     img{
-        opacity: .15;
-        animation: fadeimg ease-in-out;
-        animation-range: entry-crossing cover;
-        border-radius: $border-radius;
-        animation-timeline: view();
+        filter: sepia(0) hue-rotate(0deg) saturate(100%) !important;
+        opacity: 1 !important;
     }
-}
-
-.slider {
-    background: #061b22;
-    position: relative;
-    color: #fefefe;
-    max-width: 1280px;
-    margin: 0 auto;
-}
+  }
 
 .contact-infos {
     a {
@@ -302,42 +258,43 @@ right: 20px;
 
 @keyframes fadeimg {
     0% {
-        transform: scale(.7);
-        opacity: 0;
+        transform: scale(1.1);
+        opacity: .5;
     }
     7%{
         transform: scale(1);
-        opacity: .5;
+        opacity: 1;
     }
-    12%{
+    70%{
         opacity: 1;
     }
     85%{
-        opacity: 1;
-    }
-    88%{
         transform: scale(1) translateY(0);
         opacity: .7;
     }
     100% {
-        transform: scale(.3) translateY(-100%);
-        opacity: .1;
+        transform: scale(.8) translateY(20%);
+        opacity: 0;
     }
 }
 
 @keyframes fromleft {
     0% {
-        transform: scale(1) translateY(100%);
-        opacity: 0.7;
+        transform: scale(1) translateY(0);
+        opacity: 1;
     }
-    50% {
+    60% {
         transform: scale(1) translateY(0);
         opacity: 0.8;
 
     }
-    100% {
+    65% {
+        transform: scale(1) translateY(0);
+        opacity: .6;
+    }
+    100%{
         transform: scale(1) translateY(100%);
-        opacity: .4;
+        opacity: 0;
     }
 }
 
@@ -376,5 +333,18 @@ right: 20px;
     100% {
         transform: scale(.9) translateY(100%);
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width : 768px){
+    #works {
+        img{
+        border:solid 4px #cfe2de;
+        opacity: 1;
+        margin-bottom: 40px;
+        width: 80%;
+        -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
+        filter: sepia(0) hue-rotate(0deg) saturate(100%);
+        }
     }
 }
