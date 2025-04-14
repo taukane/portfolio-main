@@ -17,9 +17,6 @@ function dimOn() {
 		behavior: 'smooth'
 	});
 }
-function dimOff() {
-	document.getElementById("QuickView").style.display = "none";
-}
 
 function toTop() {
 	window.scrollTo({
@@ -31,20 +28,20 @@ function toTop() {
 const panels = [
 	{id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagem <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
 	{id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
-	{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Autoconf <small>/ 2018</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
+	{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Autoconf <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
 	{id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led<small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
 	{id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
 	{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
 	{id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
 	{id: 8, name: 'Direção de Arte', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
 	{id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
-	{id: 10, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
-	{id: 11, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
-	{id: 12, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
+	{id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
+	{id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
+	{id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
 	{id: 13, name: 'Direção de Arte', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
-	{id: 14, name: 'Direção de Arte', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
-	{id: 15, name: 'Direção de Arte', descricao:<p>Boticário<small>/ 2012</small></p>, src: 'image/boticario.jpg'},
-	{id: 16, name: 'Direção de Arte', descricao:<p>Gazeta do Povo<small>/ 2010</small></p>, src: 'image/gazeta.webp'},
+	{id: 14, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
+	{id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário<small>/ 2012</small></p>, src: 'image/boticario.jpg'},
+	{id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo<small>/ 2010</small></p>, src: 'image/gazeta.webp'},
 ];
 
 const thumbis = [
@@ -57,9 +54,9 @@ const thumbis = [
 	{id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
 	{id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
 	{id: 9, name: 'Website Interface UI', src: 'image/globo-renault-thumb.jpg'},
-	{id: 10, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
-	{id: 11, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
-	{id: 12, name: 'Branding', src: 'image/zeta-estaleiro.jpg'},
+	{id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
+	{id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
+	{id: 12, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
 	{id: 13, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
 	{id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
 	{id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
@@ -76,15 +73,13 @@ function App() {
 					<div className="col">
 						<div className="box">
 							<h2>Taukane</h2>
-						<p>
-							Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.
-						</p>
+							<p>Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.
+							</p>
 						</div>
 						<div className="box box-2">
 							<h2>Designer</h2>
-						<p>
-							Experiências iniciadas em 2002 comunicando marcas nacionais e internacionais.
-						</p>
+							<p>Experiências iniciadas em 2002 comunicando marcas nacionais e internacionais.
+							</p>
 						</div>
 						<div className="box box-3">
 							<h2>Web e Gráfico</h2>
@@ -95,9 +90,8 @@ function App() {
 			<div className="apresenta rounded">
 				<a
 					onClick={dimOn}
-					className="tauk"
 					title="Designer Web e Grafico"
-					href="?!"
+					href="#works"
 				>
 					<h1>Designer Curitiba</h1>
 				</a>
@@ -125,7 +119,7 @@ function App() {
 							</div>
 							<div className="d-block">
 								<a
-									href="https://github.com/taukane/portfolio"
+									href="https://github.com/taukane/portfolio-main"
 									title="Github Taukane"
 									rel="noopener"
 									target="_blank">
@@ -144,7 +138,7 @@ function App() {
 			</div>
 			<div className="container-fluid">
 				<div className="row">
-					<div className="col-11 mx-auto">
+					<div className="col-12 col-xxl-8 mx-auto">
 					<Swiper
 						style={{
 							'--swiper-pagination-color': '#f90',
@@ -161,20 +155,16 @@ function App() {
 						watchSlidesProgress={true}
 						breakpoints={{
 							'@0.00': {
-							  slidesPerView: 1,
-							  spaceBetween: 10,
-							},
-							'@0.75': {
 							  slidesPerView: 2,
-							  spaceBetween: 20,
+							  spaceBetween: 3,
 							},
 							'@1.00': {
 							  slidesPerView: 3,
-							  spaceBetween: 40,
+							  spaceBetween: 8,
 							},
 							'@1.50': {
 							  slidesPerView: 4,
-							  spaceBetween: 50,
+							  spaceBetween: 10,
 							},
 						  }}
 						modules={[FreeMode, Pagination, Thumbs]}
@@ -184,9 +174,6 @@ function App() {
 					{
 						thumbis.map((tumbis) =>(
 							<SwiperSlide>
-								{({ isActive }) => (
-									<div>Current slide is {isActive ? 'active' : 'not active'}</div>
-								)}
 								<a href="#ancora">
 									<h4>{tumbis.name}</h4>
 									<img key={tumbis.id} 
@@ -199,7 +186,7 @@ function App() {
 					}
 					</Swiper>
 					</div>
-					<div className="col-12">
+					<div className="col-12 col-xxl-8 mx-auto">
 					<Swiper
 						style={{
 						'--swiper-navigation-color': '#ff9900',
@@ -235,15 +222,11 @@ function App() {
 					</div>
 				</div>
 			</div>
-		
-			<a className="fechar" onClick={dimOff}>
-				<img alt="Fechar" src="image/bt_fechar.gif" width={50} height={50}/>
-			</a>
-			<a onClick={toTop} title="Topo Portfolio" id="topo">
+			<a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
 				<img
 					src="image/top.jpg"
 					alt="Taukane - Diretor de Arte Web"
-					title="Taukane Website"
+					title="Diretor de Arte Web Curitiba"
 					width={50}
 					height={50}
 				/>
