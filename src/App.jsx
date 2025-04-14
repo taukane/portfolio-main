@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 function dimOn() {
-	document.getElementById("QuickView").style.display = "block";
 	window.scrollTo({
 		top: 0,
 		left: 0,
@@ -33,13 +32,13 @@ const panels = [
 	{id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
 	{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
 	{id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
-	{id: 8, name: 'Direção de Arte', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
+	{id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
 	{id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
 	{id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
 	{id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
 	{id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
-	{id: 13, name: 'Direção de Arte', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
-	{id: 14, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
+	{id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
+	{id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
 	{id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário<small>/ 2012</small></p>, src: 'image/boticario.jpg'},
 	{id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo<small>/ 2010</small></p>, src: 'image/gazeta.webp'},
 ];
@@ -48,12 +47,12 @@ const thumbis = [
 	{id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
 	{id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
 	{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
-	{id: 4, name: 'Website Interface UI', src: 'image/facas-embalagens-thumb.jpg'},
-	{id: 5, name: 'Projeto Gráfico', src: 'image/laww-thumb.jpg'},
-	{id: 6, name: 'Branding', src: 'image/cbd-med.jpg'},
+	{id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
+	{id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
+	{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
 	{id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
 	{id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
-	{id: 9, name: 'Website Interface UI', src: 'image/globo-renault-thumb.jpg'},
+	{id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
 	{id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
 	{id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
 	{id: 12, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
@@ -196,6 +195,7 @@ function App() {
 						navigation={true}
 						thumbs={{ swiper: thumbsSwiper }}
 						lazy={true}
+						grabCursor={true}
 						modules={[FreeMode, Navigation, Thumbs]}
 						className="portfolio"
 						autoHeight={true}
@@ -227,6 +227,7 @@ function App() {
 					src="image/top.jpg"
 					alt="Taukane - Diretor de Arte Web"
 					title="Diretor de Arte Web Curitiba"
+					className="img-fluid rounded shadow-lg"
 					width={50}
 					height={50}
 				/>
