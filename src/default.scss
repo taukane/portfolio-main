@@ -17,14 +17,35 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002e3e', endColorstr='#fbe4bf', GradientType=0);
 }
 
-
 img  { 
     image-rendering: optimizeQuality;  
     -ms-interpolation-mode: bicubic;  
     max-width: 100%; 
 }     
-    
 
+@media (prefers-reduced-motion: no-preference) {
+    .apresenta h1 {
+        &:hover {
+            animation: logo-BOom infinite 3s;
+        }
+    }
+}
+
+@keyframes logo-BOom {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.234) translateY(0);
+        opacity: .1234;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+    
 .apresenta {
     width: 58%;
     height: 58vh;
@@ -54,7 +75,6 @@ img  {
 
 
 #works{
-
     h4{
         max-width: 250px;
         position: relative;
@@ -68,31 +88,24 @@ img  {
         text-shadow: 1px 1px 1px rgb(0, 0, 0);
         }
     img{
+        max-width: 280px;
         z-index:2;
         border-width: 4px;
         border-color:  #cfe2de;
         border-style: dashed;
-        opacity: 0.25;
+        opacity: 0.35;
         filter: sepia(50%) hue-rotate(20deg) saturate(10%);
         margin: 4px;
         border-radius: $border-radius;
-        &:hover{
-            z-index:0;
-            -moz-transition: all .3s ease-in-out;
-            -o-transition: all .3s ease-in-out;
-            -ms-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out;
-            filter: sepia(0) hue-rotate(0deg) saturate(100%);
-            opacity: 1;
-            }
+    &:hover{
+        z-index:0;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        filter: sepia(0) hue-rotate(0deg) saturate(100%);
+        opacity: 1;
         }
-    hr {
-        background: url('../image/linha.png') repeat scroll 0 0 transparent;
-        border: none;
-        clear: left;
-        display: block;
-        height: 8px;
-        margin: 0 0 20px 18px;
     }
 }
       
@@ -106,22 +119,6 @@ img  {
     animation-timeline: scroll();
 }
 
-.fechar {
-    img {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        display: block;
-        margin: 40px auto;
-        width: 50px;
-        height: 50px;
-
-        opacity:0;
-        animation: elemvisu ease-in-out;
-        animation-timeline: scroll();
-    }
-}
-
 .swiper{
     h4, p{
         color: $white;
@@ -130,18 +127,19 @@ img  {
 .swiper-slide {
     background-position: center;
     background-size: cover;
-  }
+}
   
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 100%;
-  }
-  .swiper-slide-thumb-active{
+}
+
+.swiper-slide-thumb-active{
     img{
         filter: sepia(0) hue-rotate(0deg) saturate(100%) !important;
         opacity: 1 !important;
     }
-  }
+}
 
 .contact-infos {
     a {
@@ -157,18 +155,6 @@ img  {
     }
 }
 
-@include media-breakpoint-down(md) {
-    .apresenta {width: 100%;}
-    .box {
-        width: 100%;
-        height: 50vh;
-        border-radius: 5px;
-        display: flex;
-        justify-content: start;
-        align-items: start;
-        flex-direction: column;
-    }
-}
 .scroller {
     height: 8px;
     position: fixed;
@@ -221,61 +207,6 @@ img  {
     animation-range: entry 100% exit 100%;
     animation: fromleft;
     animation-timeline: view();
-  }
-  
-
-@media (prefers-reduced-motion: no-preference) {
-    .apresenta h1 {
-        &:hover {
-            animation: logo-spin infinite 3s;
-        }
-    }
-}
-
-@keyframes logo-spin {
-    0% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.234) translateY(0);
-        opacity: .1234;
-    }
-    100% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes portifa {
-    from {
-        opacity: .5;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeimg {
-    0% {
-        transform: scale(1.1);
-        opacity: .5;
-    }
-    7%{
-        transform: scale(1);
-        opacity: 1;
-    }
-    70%{
-        opacity: 1;
-    }
-    85%{
-        transform: scale(1) translateY(0);
-        opacity: .7;
-    }
-    100% {
-        transform: scale(.8) translateY(20%);
-        opacity: 0;
-    }
 }
 
 @keyframes fromleft {
@@ -336,13 +267,22 @@ img  {
     }
 }
 
-@media only screen and (max-width : 768px){
+@include media-breakpoint-down(md) {
+    .apresenta {width: 100%;}
+    .box {
+        width: 100%;
+        height: 50vh;
+        border-radius: 5px;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+    }
     #works {
         img{
         border:solid 4px #cfe2de;
         opacity: 1;
         margin-bottom: 40px;
-        width: 80%;
         -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
         filter: sepia(0) hue-rotate(0deg) saturate(100%);
         }
