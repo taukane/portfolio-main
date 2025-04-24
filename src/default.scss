@@ -7,10 +7,12 @@ $font-family-base: 'Courier New', Courier, monospace !default;
 
 @import "bootstrap/scss/bootstrap";
 
+html {
+    min-height: 100%;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
-    width: 100%;
-    height: 100%;
     background: -moz-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
     background: -webkit-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
     background: linear-gradient(to bottom, #002e3e 0%, #fbe4bf 100%);
@@ -46,6 +48,49 @@ img  {
     }
 }
     
+.box {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    opacity: 0;
+    animation-range-start: cover;
+    animation-range-end: cover;
+    animation-range: exit 0% exit 100%;
+    animation: reveal ease-in-out;
+    animation-timeline: view();
+    h2 {
+        font-size: 4.3rem;
+        color: #e0ffff;
+        text-shadow:
+            0 0 1ex rgb(59, 168, 198),
+            0 0 2px rgba(255, 255, 255, 0.8);
+      }
+    p {
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin: 20px;
+    font-size: 1.473em;
+    color: #e0ffff;
+    font-weight: bold;
+  }
+}
+.box-3{
+    height: 55vh;
+    opacity: .2;
+    animation-range-start: contain;
+    animation-range-end: cover;
+    animation-range: entry 100% exit 100%;
+    animation: animatreis;
+    animation-timeline: view();
+}
+
 .apresenta {
     width: 58%;
     height: 58vh;
@@ -72,7 +117,6 @@ img  {
         }
     }
 }
-
 
 #works{
     h4{
@@ -168,45 +212,6 @@ img  {
     animation: scroller linear;
     animation-timeline: scroll();
 }
-.box {
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    margin-top: 15px;
-    opacity: 0;
-    animation-range-start: cover;
-    animation-range-end: cover;
-    animation-range: exit 0% exit 100%;
-    animation: reveal ease-in-out;
-    animation-timeline: view();
-    h2 {
-        font-size: 4.3rem;
-        color: #e0ffff;
-    }
-    p {
-    text-align: center;
-    display: block;
-    width: 50%;
-    margin: 20px;
-    font-size: 1.473em;
-    color: #e0ffff;
-    font-weight: bold;
-  }
-}
-.box-3{
-    height: 55vh;
-    opacity: .2;
-    animation-range-start: contain;
-    animation-range-end: cover;
-    animation-range: entry 100% exit 100%;
-    animation: animatreis;
-    animation-timeline: view();
-}
 
 @keyframes animatreis {
     0% {
@@ -275,11 +280,8 @@ img  {
     }
     #works {
         img{
-        border:solid 4px #cfe2de;
-        opacity: 1;
+        border:solid 4px #a6c5eb;
         margin-bottom: 40px;
-        -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
-        filter: sepia(0) hue-rotate(0deg) saturate(100%);
         }
     }
 }

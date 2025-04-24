@@ -1,4 +1,3 @@
-import {auto} from "@popperjs/core";
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Navigation, Thumbs } from 'swiper/modules';
@@ -25,10 +24,10 @@ function toTop() {
 	});
 }
 const panels = [
-	{id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagem <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
+	{id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
 	{id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
 	{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Autoconf <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
-	{id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led<small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
+	{id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
 	{id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
 	{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
 	{id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
@@ -39,8 +38,8 @@ const panels = [
 	{id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
 	{id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
 	{id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
-	{id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário<small>/ 2012</small></p>, src: 'image/boticario.jpg'},
-	{id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo<small>/ 2010</small></p>, src: 'image/gazeta.webp'},
+	{id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
+	{id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
 ];
 
 const thumbis = [
@@ -87,11 +86,9 @@ function App() {
 				</div>
 			</div>
 			<div className="apresenta rounded">
-				<a
-					onClick={dimOn}
+				<a onClick={dimOn}
 					title="Designer Web e Grafico"
-					href="#works"
-				>
+					href="#works">
 					<h1>Designer Curitiba</h1>
 				</a>
 				<div className="container">
@@ -167,7 +164,6 @@ function App() {
 							},
 						  }}
 						modules={[FreeMode, Pagination, Thumbs]}
-						className="portthumbs"
 						id="works"
 					>
 					{
@@ -203,10 +199,7 @@ function App() {
 					{
 						panels.map((panel) => (
 							<>
-								<SwiperSlide>		
-									{({ isActive }) => (
-										<div>Current slide is {isActive ? 'active' : 'not active'}</div>
-									)}						
+								<SwiperSlide>							
 									<h5 id="ancora" className="pt-4 fw-bold text-light">{panel.name}</h5>
 									{panel.descricao}
 									<img key={panel.id} 
