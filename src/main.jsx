@@ -1,7 +1,15 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
+import {
+	createBrowserRouter,
+	RouterProvider,
+} from "react-router";
+
 import './default.scss'
+
 import App from './App.jsx'
+import Port from './Port.jsx'
+import Contato from './Contato.jsx'
+
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
@@ -18,8 +26,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-)
+const router = createBrowserRouter([
+	{ path: "/", Component: App },
+	{ path: "/portfolio", Component: Port },
+	{ path: "*", Component: Contato }
+]); 
+
+ReactDOM.createRoot(root).render(
+	<RouterProvider router={router} />
+);
