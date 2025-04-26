@@ -24,7 +24,6 @@ dist-ssr
 *.sw?
 
 *.firebase/
-.firebase.json
 *.firebaserc
 firebase-debug.log
 firebase-debug.*.log
