@@ -29,7 +29,7 @@ const analytics = getAnalytics(app);
 const router = createBrowserRouter([
 	{ path: "/", Component: App },
 	{ path: "/portfolio", Component: Port },
-	{ path: "*", Component: Contato }
+	{ path: "*", Component: App }
 ]); 
 
 ReactDOM.createRoot(root).render(
