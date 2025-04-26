@@ -12,21 +12,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-function dimOn() {
-window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-});
-}
-
-function toTop() {
-window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-});
-}
 const panels = [
 {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
 {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
@@ -76,16 +61,12 @@ return (
                 <NavLink to="/">
                     Home
                 </NavLink>
-                <NavLink to="/contato">
-                    Contato
-                </NavLink>
                 <NavLink to="/portfolio">Portfolio</NavLink>
                 </div>
             </div>
         </div>
         <div className="apresenta rounded">
-            <a onClick={dimOn}
-                title="Designer Web e Grafico"
+            <a  title="Designer Web e Grafico"
                 href="#works">
                 <h1>Designer Curitiba</h1>
             </a>
@@ -216,16 +197,6 @@ return (
                 </div>
             </div>
         </div>
-        <a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
-            <img
-                src="image/top.jpg"
-                alt="Taukane - Diretor de Arte Web"
-                title="Diretor de Arte Web Curitiba"
-                className="img-fluid rounded shadow-lg"
-                width={50}
-                height={50}
-            />
-        </a>
     </>
 )
 }
