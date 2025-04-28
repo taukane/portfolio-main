@@ -1,7 +1,5 @@
 
 import { NavLink } from "react-router";
-
-
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Navigation, Thumbs } from 'swiper/modules';
@@ -125,7 +123,6 @@ return (
                     pagination={{
                         clickable: true,
                         }}
-                    lazy={true}
                     freeMode={true}
                     watchSlidesProgress={true}
                     breakpoints={{
@@ -147,10 +144,10 @@ return (
                 >
                 {
                     thumbis.map((tumbis) =>(
-                        <SwiperSlide>
+                        <SwiperSlide key={tumbis.id}>
                             <a href="#ancora">
                                 <h4>{tumbis.name}</h4>
-                                <img key={tumbis.id} 
+                                <img 
                                 src={tumbis.src} 
                                 alt={tumbis.name}
                                 />
@@ -169,7 +166,6 @@ return (
                     spaceBetween={40}
                     navigation={true}
                     thumbs={{ swiper: thumbsSwiper }}
-                    lazy={true}
                     grabCursor={true}
                     modules={[FreeMode, Navigation, Thumbs]}
                     className="portfolio"
@@ -177,20 +173,15 @@ return (
                 >
                 {
                     panels.map((panel) => (
-                        <>
-                            <SwiperSlide>		
-                                {({ isActive }) => (
-                                    <div>Current slide is {isActive ? 'active' : 'not active'}</div>
-                                )}						
-                                <h5 id="ancora" className="pt-4 fw-bold text-light">{panel.name}</h5>
-                                {panel.descricao}
-                                <img key={panel.id} 
-                                src={panel.src} 
-                                alt={panel.name}
-                                className="img-fluid rounded shadow-lg"
-                                />
-                            </SwiperSlide>
-                        </>
+                        <SwiperSlide key={panel.id}>								
+                            <h5 id="ancora" className="pt-4 fw-bold text-light">{panel.name}</h5>
+                            {panel.descricao}
+                            <img
+                            src={panel.src} 
+                            alt={panel.name}
+                            className="img-fluid rounded shadow-lg"
+                            />
+                        </SwiperSlide>
                     ))
                 }
                 </Swiper>

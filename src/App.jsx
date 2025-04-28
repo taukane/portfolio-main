@@ -135,83 +135,82 @@ function App() {
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-12 col-xxl-8 mx-auto">
-					<Swiper
-						style={{
-							'--swiper-pagination-color': '#f90',
+						<Swiper
+							style={{
+								'--swiper-pagination-color': '#f90',
+								}}
+							modules={[FreeMode, Pagination, Thumbs]}
+							onSwiper={setThumbsSwiper}
+							loop={true}
+							spaceBetween={10}
+							slidesPerView={4}
+							pagination={{
+								clickable: true,
 							}}
-						onSwiper={setThumbsSwiper}
-						loop={true}
-						spaceBetween={10}
-						slidesPerView={4}
-						pagination={{
-							clickable: true,
-						  }}
-						lazy={true}
-						freeMode={true}
-						watchSlidesProgress={true}
-						breakpoints={{
-							'@0.00': {
-							  slidesPerView: 2,
-							  spaceBetween: 3,
-							},
-							'@1.00': {
-							  slidesPerView: 3,
-							  spaceBetween: 8,
-							},
-							'@1.50': {
-							  slidesPerView: 4,
-							  spaceBetween: 10,
-							},
-						  }}
-						modules={[FreeMode, Pagination, Thumbs]}
-						id="works"
-					>
-					{
-						thumbis.map((tumbis) =>(
-							<SwiperSlide>
-								<a href="#ancora">
-									<h4>{tumbis.name}</h4>
-									<img key={tumbis.id} 
-									src={tumbis.src} 
-									alt={tumbis.name}
-									/>
-								</a>
-							</SwiperSlide>
-						))
-					}
-					</Swiper>
+							freeMode={true}
+							// watchSlidesProgress={true}
+							breakpoints={{
+								'@0.00': {
+								slidesPerView: 2,
+								spaceBetween: 3,
+								},
+								'@1.00': {
+								slidesPerView: 3,
+								spaceBetween: 8,
+								},
+								'@1.50': {
+								slidesPerView: 4,
+								spaceBetween: 10,
+								},
+							}}
+							id="works"
+						>
+						{
+							thumbis.map((tumbis) =>(
+								<SwiperSlide key={tumbis.id} >
+									<a href="#ancora">
+										<h4>{tumbis.name}</h4>
+										<img
+										src={tumbis.src} 
+										alt={tumbis.name}
+										/>
+									</a>
+								</SwiperSlide>
+							))
+						}
+						</Swiper>
 					</div>
 					<div className="col-12 col-xxl-8 mx-auto">
-					<Swiper
-						style={{
-						'--swiper-navigation-color': '#ff9900',
-						}}
-						loop={true}
-						spaceBetween={40}
-						navigation={true}
-						thumbs={{ swiper: thumbsSwiper }}
-						lazy={true}
-						grabCursor={true}
-						modules={[FreeMode, Navigation, Thumbs]}
-						className="portfolio"
-						autoHeight={true}
-					>
-					{
-						panels.map((panel) => (
-							<>
-								<SwiperSlide>							
-									<h5 id="ancora" className="pt-4 fw-bold text-light">{panel.name}</h5>
+						<Swiper
+							style={{
+							'--swiper-navigation-color': '#ff9900',
+							}}
+							modules={[FreeMode, Navigation, Thumbs]}
+							thumbs={{ swiper: thumbsSwiper }}
+							lazy={true.toString()}
+							loop={true}
+							spaceBetween={40}
+							navigation={true}
+							grabCursor={true}
+							className="portfolio"
+							autoHeight={true}
+						>
+						{
+							panels.map((panel) => (
+								<SwiperSlide key={panel.id}  id="ancora">							
+									<h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
 									{panel.descricao}
-									<img key={panel.id} 
+									<img 
 									src={panel.src} 
 									alt={panel.name}
 									className="img-fluid rounded shadow-lg"
+									loading="lazy"
 									/>
+									<div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 								</SwiperSlide>
-							</>
-						))
-					}
-					</Swiper>
+							))
+						}
+						</Swiper>
 					</div>
 				</div>
 			</div>

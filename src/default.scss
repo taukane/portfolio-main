@@ -282,6 +282,8 @@ img  {
         img{
         border:solid 4px #a6c5eb;
         margin-bottom: 40px;
+        filter: sepia(0) hue-rotate(0deg) saturate(100%);
+        opacity: 1;
         }
     }
 }
