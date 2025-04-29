@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client'
+
 import {
 	createBrowserRouter,
 	RouterProvider,
@@ -8,23 +9,22 @@ import './default.scss'
 
 import App from './App.jsx'
 import Port from './Port.jsx'
-import Contato from './Contato.jsx'
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
 
-const firebaseConfig = {
-	apiKey: "AIzaSyD9oaTHGy1QF0aYncLbe4ADpNS1HTr76vw",
-	authDomain: "portfolio-taukane.firebaseapp.com",
-	projectId: "portfolio-taukane",
-	storageBucket: "portfolio-taukane.appspot.com",
-	messagingSenderId: "1037598800771",
-	appId: "1:1037598800771:web:33e3c5d639b347232714b6",
-	measurementId: "G-6L6D6911HD"
-};
+// const firebaseConfig = {
+// 	apiKey: "AIzaSyD9oaTHGy1QF0aYncLbe4ADpNS1HTr76vw",
+// 	authDomain: "portfolio-taukane.firebaseapp.com",
+// 	projectId: "portfolio-taukane",
+// 	storageBucket: "portfolio-taukane.appspot.com",
+// 	messagingSenderId: "1037598800771",
+// 	appId: "1:1037598800771:web:33e3c5d639b347232714b6",
+// 	measurementId: "G-6L6D6911HD"
+// };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 
 const router = createBrowserRouter([
 	{ path: "/", Component: App },

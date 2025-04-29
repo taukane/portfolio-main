@@ -92,7 +92,6 @@ img  {
 }
 
 .apresenta {
-    width: 58%;
     height: 58vh;
     margin: 0px auto 40px auto;
     padding-bottom: 40px;
@@ -282,6 +281,9 @@ img  {
         img{
         border:solid 4px #a6c5eb;
         margin-bottom: 40px;
+        filter: sepia(0) hue-rotate(0deg) saturate(100%);
+        opacity: 1;
         }
     }
 }
+.lh-007{line-height: .404rem;}
