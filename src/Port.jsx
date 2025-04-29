@@ -61,14 +61,14 @@ return (
         <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav justify-content-center d-flex">
             <li className="nav-item">
-            <NavLink className="nav-link" href="#" aria-current="page" to="/">
+            <NavLink className="nav-link" href="#" to="/">
                 Home
             </NavLink>
             </li>
             <li className="nav-item">
-            <NavLink  className="nav-link active" to="/portfolio">Portfolio</NavLink>
+            <NavLink  className="nav-link active" aria-current="page" to="/portfolio">Portfolio</NavLink>
             </li>
         </ul>
         </div>
