@@ -86,7 +86,7 @@ return (
                 <hr/>
                 <h3>Experiência sólida em desenvolvimento web full-stack (front-end e back-end), desde a concepção da arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.</h3>
                 <hr/>
-                <h4>Criação de identidades visuais para marcas e embalagens até a arte final para impressão.</h4>
+                <h4 className="mb-5">Criação de identidades visuais para marcas e embalagens até a arte final para impressão.</h4>
             </div>
         </div>
     </div>
