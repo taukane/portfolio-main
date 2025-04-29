@@ -50,7 +50,7 @@ img  {
     
 .box {
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,9 +59,9 @@ img  {
     margin: 0;
     margin-top: 15px;
     opacity: 1;
-    animation-range-start: cover;
-    animation-range-end: cover;
-    animation-range: exit 0% exit 100%;
+    // animation-range-start: contain;
+    // animation-range-end: cover;
+    animation-range: exit 100% exit 50%;
     animation: reveal ease-in-out;
     animation-timeline: view();
     h2 {
@@ -80,13 +80,10 @@ img  {
     color: #e0ffff;
     font-weight: bold;
   }
-  hr{
-    background-image: url('linha.png');
-  }
 }
 .box-3{
-    height: 55vh;
-    opacity: .2;
+    height: 85vh;
+    opacity: .5;
     animation-range-start: contain;
     animation-range-end: cover;
     animation-range: entry 100% exit 100%;
@@ -94,15 +91,50 @@ img  {
     animation-timeline: view();
 }
 
+@keyframes animatreis {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(1) translateY(0);
+        opacity: 0.8;
+
+    }
+    65% {
+        transform: scale(1) translateY(0);
+        opacity: .6;
+    }
+    100%{
+        transform: scale(1) translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        transform: scale(1) translateY(50%);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(90%) translateY(0);
+        opacity: 0.9;
+
+    }
+    100% {
+        transform: scale(1) translateY(100%);
+        opacity: 0;
+    }
+}
+
 .apresenta {
+    width: 100%;
     max-width: 1024px;
     height: 75vh;
     margin: 0px auto 40px auto;
     padding-bottom: 40px;
     display: block;
     background: #fefefede;
-    animation: portifa 3s linear;
-    animation-timeline: view();
     h1 {
         text-indent: -90000px;
         display: block;
@@ -119,6 +151,11 @@ img  {
             filter: drop-shadow(0 0 2em rgba(2, 2, 39, 0.67));
         }
     }
+    hr{
+        background: url('../image/linha.png') repeat scroll 0 0 transparent;
+        border: none;
+        height: 8px;
+      }
 }
 
 #works{
@@ -216,42 +253,6 @@ img  {
     animation-timeline: scroll();
 }
 
-@keyframes animatreis {
-    0% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-    60% {
-        transform: scale(1) translateY(0);
-        opacity: 0.8;
-
-    }
-    65% {
-        transform: scale(1) translateY(0);
-        opacity: .6;
-    }
-    100%{
-        transform: scale(1) translateY(100%);
-        opacity: 0;
-    }
-}
-
-@keyframes reveal {
-    0% {
-        transform: scale(1) translateY(100%);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(90%) translateY(0);
-        opacity: 0.9;
-
-    }
-    100% {
-        transform: scale(1) translateY(100%);
-        opacity: 0;
-    }
-}
-
 @keyframes scroller {
     to {
         transform: scale(1, 1);
@@ -278,7 +279,7 @@ img  {
     .apresenta {width: 100%;}
     .box {
         width: 100%;
-        height: 50vh;
+        height: 70vh;
         text-align: left;
     }
     #works {
