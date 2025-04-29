@@ -13,7 +13,7 @@ function App() {
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col">
-						<div className="box">
+						<div className="box my-5">
 							<h2>Taukane</h2>
 							<p>Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.
 							</p>
@@ -29,11 +29,11 @@ function App() {
 					</div>
 				</div>
 			</div>
-			<div className="apresenta rounded">
+			<div className="apresenta rounded mb-5 pb-5">
 			<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
 				<div className="container">
 					<div className="row">
-						<div className="col-md-10 d-flex justify-content-md-end justify-content-center gap-5 mt-2 contact-infos">
+						<div className="col-md-10 d-flex justify-content-md-end justify-content-center gap-5 mt-5 contact-infos">
 							<div className="d-block">
 								<a
 									href="http://www.linkedin.com/in/taukane"

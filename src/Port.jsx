@@ -14,7 +14,7 @@ const panels = [
 {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
 {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Autoconf <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
-{id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led<small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
+{id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
 {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
 {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
 {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
@@ -25,8 +25,8 @@ const panels = [
 {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
 {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
 {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
-{id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário<small>/ 2012</small></p>, src: 'image/boticario.jpg'},
-{id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo<small>/ 2010</small></p>, src: 'image/gazeta.webp'},
+{id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
+{id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
 ];
 
 const thumbis = [
@@ -60,15 +60,15 @@ return (
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav justify-content-center d-flex">
+        <div className="collapse navbar-collapse justify-content-center d-flex" id="navbarNav">
+        <ul className="navbar-nav">
             <li className="nav-item">
             <NavLink className="nav-link" href="#" to="/">
-                Home
+                Taukane
             </NavLink>
             </li>
             <li className="nav-item">
-            <NavLink  className="nav-link active" aria-current="page" to="/portfolio">Portfolio</NavLink>
+            <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio">Portfolio</NavLink>
             </li>
         </ul>
         </div>

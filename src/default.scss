@@ -92,7 +92,9 @@ img  {
 }
 
 .apresenta {
-    height: 58vh;
+    min-width: 960px;
+    max-width: 1024px;
+    height: 75vh;
     margin: 0px auto 40px auto;
     padding-bottom: 40px;
     display: block;
