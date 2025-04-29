@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { NavLink } from "react-router";
 function toTop() {
 	window.scrollTo({
@@ -31,7 +30,7 @@ function App() {
 				</div>
 			</div>
 			<div className="apresenta rounded">
-			<NavLink  className="nav-link active" to="/portfolio" title="Designer Web e Grafico"><h1>Designer Curitiba</h1></NavLink>
+			<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
 				<div className="container">
 					<div className="row">
 						<div className="col-md-10 d-flex justify-content-md-end justify-content-center gap-5 mt-2 contact-infos">
