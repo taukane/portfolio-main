@@ -302,11 +302,6 @@ img  {
         }
     }
     .swiper-button-next, .swiper-button-prev{
-        background: rgba(15, 21, 104, 0.473);
-        border-radius: $border-radius;
-        width: 50px !important;
-        top: 70px !important;
-        &:after{font-size: 1.3rem;}
+        display: none !important;
     }
-    .swiper-button-prev{right: 65px !important;}
 }

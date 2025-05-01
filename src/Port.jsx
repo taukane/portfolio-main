@@ -17,7 +17,7 @@ const panels = [
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
 {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
 {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
-{id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias-layout.webp'},
+{id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias.webp'},
 {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
 {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
 {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
@@ -32,7 +32,7 @@ const panels = [
 ];
 
 const thumbis = [
-{id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
+{id: 0, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
 {id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
 {id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
@@ -54,9 +54,9 @@ last:<a href="/portfolio-taukane" className="d-block text-center my-auto">
     <p className="">Mais Projetos</p>
     <img
         src="image/more.png"
-        alt="Projetos Design"
-        title="Projetos Design"
-        className="rounded shadow-lg border-0 mx-auto"
+        alt="+ Projetos Design"
+        title="+ Projetos Design"
+        className="rounded shadow-lg border-0 mx-auto my-auto"
         width={50}
         height={50} />
 </a>
@@ -126,7 +126,7 @@ return (
                     breakpoints={{
                         '@0.00': {
                         slidesPerView: 2,
-                        spaceBetween: 5,
+                        spaceBetween: 7,
                         },
                         '@1.00': {
                         slidesPerView: 3,
@@ -163,11 +163,14 @@ return (
                     style={{
                     '--swiper-navigation-color': '#ff9900',
                     }}
-                    modules={[FreeMode, Navigation, Thumbs]}
+                    modules={[FreeMode, Keyboard, Navigation, Thumbs]}
                     thumbs={{ swiper: thumbsSwiper }}
                     lazy={true.toString()}
                     loop={true}
                     spaceBetween={40}
+                    keyboard={{
+                        enabled: true,
+                    }}
                     navigation={true}
                     grabCursor={true}
                     className="mb-3"
