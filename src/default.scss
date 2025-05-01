@@ -25,6 +25,26 @@ img  {
     max-width: 100%; 
 }     
 
+.scroller {
+    height: 8px;
+    position: fixed;
+    top: 0%;
+    z-index: 100;
+    background-color:#4e758d;
+    width: 100%;
+    transform: scale(0, 1);
+    transform-origin: left;
+    animation: scroller linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroller {
+    to {
+        transform: scale(1, 1);
+        background-color: #cfe2de;
+    }
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .apresenta h1 {
         &:hover {
@@ -59,8 +79,6 @@ img  {
     margin: 0;
     margin-top: 15px;
     opacity: 1;
-    // animation-range-start: contain;
-    // animation-range-end: cover;
     animation-range: exit 100% exit 50%;
     animation: reveal ease-in-out;
     animation-timeline: view();
@@ -81,6 +99,7 @@ img  {
     font-weight: bold;
   }
 }
+
 .box-3{
     height: 85vh;
     opacity: .5;
@@ -155,7 +174,7 @@ img  {
         background: url('../image/linha.png') repeat scroll 0 0 transparent;
         border: none;
         height: 8px;
-      }
+    }
 }
 
 #works{
@@ -172,7 +191,7 @@ img  {
         text-shadow: 1px 1px 1px rgb(0, 0, 0);
     }
     img{
-        max-width: 280px;
+        max-width: 100%;
         z-index:2;
         border-width: 4px;
         border-color:  #cfe2de;
@@ -212,12 +231,13 @@ img  {
 }
 .swiper-slide {
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
   
 .swiper-slide img {
-    display: block;
-    width: 100%;
+    // display: block;
+    max-width: 100%;
+    background: $white;
 }
 
 .swiper-slide-thumb-active{
@@ -225,6 +245,17 @@ img  {
         filter: sepia(0) hue-rotate(0deg) saturate(100%) !important;
         opacity: 1 !important;
     }
+}
+
+.swiper-button-next, .swiper-button-prev{
+    top:55px !important;
+    &::after{
+        font-size: 23px !important;
+    }
+}
+.swiper-button-prev{
+    left:auto !important;
+    right:120px !important;
 }
 
 .contact-infos {
@@ -237,26 +268,6 @@ img  {
             transition: all ease-in-out .2s;
             opacity: 1;
         }
-    }
-}
-
-.scroller {
-    height: 8px;
-    position: fixed;
-    top: 0%;
-    z-index: 100;
-    background-color:#4e758d;
-    width: 100%;
-    transform: scale(0, 1);
-    transform-origin: left;
-    animation: scroller linear;
-    animation-timeline: scroll();
-}
-
-@keyframes scroller {
-    to {
-        transform: scale(1, 1);
-        background-color: #cfe2de;
     }
 }
 
@@ -290,5 +301,12 @@ img  {
         opacity: 1;
         }
     }
+    .swiper-button-next, .swiper-button-prev{
+        background: rgba(15, 21, 104, 0.473);
+        border-radius: $border-radius;
+        width: 50px !important;
+        top: 70px !important;
+        &:after{font-size: 1.3rem;}
+    }
+    .swiper-button-prev{right: 65px !important;}
 }
-.lh-007{line-height: .404rem;}

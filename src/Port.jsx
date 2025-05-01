@@ -11,12 +11,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 const panels = [
-{id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
+{id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: 'image/mitsul.jpg'},
+{id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
 {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
-{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Autoconf <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
+{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
 {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
 {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
-{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
+{id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias-layout.webp'},
 {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
 {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
 {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
@@ -27,15 +28,17 @@ const panels = [
 {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
 {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
 {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
+{id: 17},
 ];
 
 const thumbis = [
+{id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
 {id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
 {id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
 {id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
 {id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
-{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
+{id: 6, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
 {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
 {id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
 {id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
@@ -46,6 +49,18 @@ const thumbis = [
 {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
 {id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
 {id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
+{id: 17,
+last:<a href="/portfolio-taukane" className="d-block text-center my-auto">
+    <p className="">Mais Projetos</p>
+    <img
+        src="image/more.png"
+        alt="Projetos Design"
+        title="Projetos Design"
+        className="rounded shadow-lg border-0 mx-auto"
+        width={50}
+        height={50} />
+</a>
+},
 ];
 
 import * as bootstrap from 'bootstrap'
@@ -74,14 +89,14 @@ return (
         </div>
     </div>
 </nav>
-<div className="apresenta lh-007 rounded-bottom w-100 h-100">
+<div className="apresenta rounded-bottom w-100 h-100">
     <a  title="Designer Web e Grafico"
         href="#works">
         <h1>Taukane / Portfolio Web Designer Curitiba</h1>
     </a>
     <div className="container">
         <div className="row">
-            <div className="col-8 mx-auto">
+            <div className="col-8 mx-auto lh-lg">
                 <h2>Desde 2002 Desenvolvendo Interfaces para Design <b>Web</b> e <b>Gráfico.</b></h2>
                 <hr/>
                 <h3>Experiência sólida em desenvolvimento web full-stack (front-end e back-end), desde a concepção da arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.</h3>
@@ -100,7 +115,7 @@ return (
                         }}
                     modules={[FreeMode, Pagination, Thumbs]}
                     onSwiper={setThumbsSwiper}
-                    loop={true}
+                    // loop={true}
                     spaceBetween={10}
                     slidesPerView={4}
                     pagination={{
@@ -111,7 +126,7 @@ return (
                     breakpoints={{
                         '@0.00': {
                         slidesPerView: 2,
-                        spaceBetween: 3,
+                        spaceBetween: 5,
                         },
                         '@1.00': {
                         slidesPerView: 3,
@@ -128,12 +143,16 @@ return (
                     thumbis.map((tumbis) =>(
                         <SwiperSlide key={tumbis.id} >
                             <a href="#ancora">
-                                <h4>{tumbis.name}</h4>
-                                <img
-                                src={tumbis.src} 
-                                alt={tumbis.name}
-                                />
+                                <h4>{tumbis.name}</h4>   
+                                {tumbis.src ? (
+                                    <img
+                                    src={tumbis.src} 
+                                    alt={tumbis.name}
+                                    />
+                                ): null
+                                }
                             </a>
+                            {tumbis.last}
                         </SwiperSlide>
                     ))
                 }
@@ -151,7 +170,7 @@ return (
                     spaceBetween={40}
                     navigation={true}
                     grabCursor={true}
-                    className="portfolio"
+                    className="mb-3"
                     autoHeight={true}
                 >
                 {
@@ -173,6 +192,7 @@ return (
             </div>
         </div>
     </div>
+
 </>
 )}
 

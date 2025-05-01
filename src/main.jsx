@@ -9,6 +9,7 @@ import './default.scss'
 
 import App from './App.jsx'
 import Port from './Port.jsx'
+import Portfolio from './Portfolio.jsx'
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -29,6 +30,7 @@ const analytics = getAnalytics(app);
 const router = createBrowserRouter([
 	{ path: "/", Component: App },
 	{ path: "/portfolio", Component: Port },
+	{ path: "/portfolio-taukane", Component: Portfolio },
 	{ path: "*", Component: App }
 ]); 
 
