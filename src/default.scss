@@ -16,8 +16,8 @@ html {
     background-color: var(--bs-dark);
 }
 [data-bs-theme=dark] body {
-background: rgba(33, 32, 34, 0.522);
-color: var(--bs-light);
+    background: rgba(33, 32, 34, 0.522);
+    color: var(--bs-light);
 }
 
 body {
@@ -80,7 +80,7 @@ img  {
     margin: 0;
     margin-top: 15px;
     opacity: 1;
-    animation-range: exit 100% exit 90%;
+    animation-range: entry 100% exit 100%;
     animation: reveal ease-in-out;
     animation-timeline: view();
     h2 {
@@ -115,12 +115,12 @@ img  {
         opacity: 1;
     }
     50% {
-        transform: scale(90%) translateY(5%);
+        transform: scale(100%) translateY(1%);
         opacity: 0.9;
 
     }
     100% {
-        transform: scale(1) translateY(80%);
+        transform: scale(1) translateY(110%);
         opacity: 0;
     }
 }
@@ -231,6 +231,21 @@ img  {
     animation-timeline: scroll();
 }
 
+@keyframes elemvisu {
+    0% {
+        transform: scale(0.7) translateY(0);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(.9) translateY(100%);
+        opacity: 1;
+    }
+}
+
 .swiper{
     h5, p{
         color: $white;
@@ -277,21 +292,6 @@ img  {
             transition: all ease-in-out .2s;
             opacity: 1;
         }
-    }
-}
-
-@keyframes elemvisu {
-    0% {
-        transform: scale(0.7) translateY(0);
-        opacity: 0;
-    }
-    15%{
-        opacity: 1;
-        transform: scale(1)
-    }
-    100% {
-        transform: scale(.9) translateY(100%);
-        opacity: 1;
     }
 }
 

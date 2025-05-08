@@ -19,7 +19,7 @@ function Port() {
 return (
 <>
 <span className="scroller"></span>
-<nav className="navbar navbar-expand-lg bg-body-tertiary">
+<nav className="navbar navbar-expand-lg bg-body-tertiary" loading="lazy">
     <div className="container-fluid">
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@ return (
         </div>
     </div>
 </nav>
-<div className="apresenta rounded-bottom w-100 h-100">
+<div className="apresenta rounded-bottom w-100 h-100" loading="lazy">
     <a  title="Designer Web e Grafico"
         href="#works">
         <h1>Taukane / Portfolio Web Designer Curitiba</h1>
@@ -92,7 +92,7 @@ return (
                 {
                     thumbis.map((tumbis) =>(
                         <SwiperSlide key={tumbis.id}>
-                            <a href="#ancora">
+                            <a href="#ancora" alt="Designer Web e Grafico" title="Designer Web e Grafico">
                                 <h4 className="link-offset-3">{tumbis.name}</h4>   
                                 {tumbis.src ? (
                                     <img

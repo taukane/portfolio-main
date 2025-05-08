@@ -8,54 +8,6 @@ import 'swiper/css/pagination';
 
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
-const panels = [
-  
-    {id: 1, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: 'image/black-club-layout-v2.webp'},
-    {id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: 'image/sibras-site.webp'},
-    {id: 4, name: 'Projeto Gráfico e Direção de Arte Web', descricao: <p>Perini / Mercantil Rodrigues <small>/ 2017</small></p>, src: 'image/megamidia.webp'},
-    {id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: 'image/jornal-independente-big.jpg'},
-    {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: 'image/emariot-2011.jpg'},
-    {id: 7, name: 'Direção de Arte Redes Sociais ', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/volvo-facebook-toda-familia-tem.jpg'},
-    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.jpg'},
-    {id: 9, name: 'Volvo CE Posts Facebook', descricao: <p>Direção de Arte Redes Sociais <small>/ 2012</small></p>, src: 'image/volvo-ce-da-arte-digital-facebook.jpg'},
-    {id: 10, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: 'image/cafe-automatic.jpg'},
-    {id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: 'image/sdlg-2012.webp'},
-    {id: 12, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: 'image/taukane-port.jpg'},
-    {id: 13, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: 'image/varios-taukane.webp'}, 
-    {id: 14, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: 'image/inicio-taukane.jpg'},
-    {id:15}
-    ];
-    
-    const thumbis = [
-    {id: 1, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png'},
-    {id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
-    {id: 4, name: 'Projeto Gráfico e Direção de Arte Web', src: 'image/megamidia-thumb.jpg'},
-    {id: 5, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
-    {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
-    {id: 7, name: 'Direção de Arte Redes Sociais', src: 'image/toda-familia-tem.jpg'},
-    {id: 8, name: 'Direção de Arte Redes Sociais', src: 'image/total-thumb.jpg'},
-    {id: 9, name: 'Direção de Arte Redes Sociais',  src: 'image/volvo-posts-thumb.jpg'},
-    {id: 10, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
-    {id: 11, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
-    {id: 12, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
-    {id: 13, name: 'Direção de Arte Web', src: 'image/tauk-2008-thumb.jpg'},
-    {id: 14, name: 'Direção de Arte Web', src: 'image/tauk-2004-thumb.jpg'},
-    {id:15, last:<a href="/portfolio" className="d-block my-auto text-center">
-        <p>Portfolio</p>
-        <img
-            src="image/prev.jpg"
-            alt="< Portfolio Taukane"
-            title="< Portfolio Taukane"
-            className="img-fluid rounded shadow-lg border-0 opacity-100"
-            width={50}
-            height={50}
-        />
-    </a>
-    },
-    ];
-
 function Portfolio() {
 const [thumbsSwiper, setThumbsSwiper] = useState(null);
 return (
@@ -84,7 +36,7 @@ return (
             </div>
         </div>
     </nav>
-    <div className="container-fluid">
+    <div className="container-fluid" loading="lazy">
         <div className="row">
             <div className="col-12 col-xxl-8 mx-auto">
                 <Swiper
@@ -175,5 +127,52 @@ return (
 </>
 )
 }
+
+const panels = [
+{id: 1, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: 'image/black-club-layout-v2.webp'},
+{id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
+{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: 'image/sibras-site.webp'},
+{id: 4, name: 'Projeto Gráfico e Direção de Arte Web', descricao: <p>Perini / Mercantil Rodrigues <small>/ 2017</small></p>, src: 'image/megamidia.webp'},
+{id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: 'image/jornal-independente-big.jpg'},
+{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: 'image/emariot-2011.jpg'},
+{id: 7, name: 'Direção de Arte Redes Sociais ', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/volvo-facebook-toda-familia-tem.jpg'},
+{id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.jpg'},
+{id: 9, name: 'Volvo CE Posts Facebook', descricao: <p>Direção de Arte Redes Sociais <small>/ 2012</small></p>, src: 'image/volvo-ce-da-arte-digital-facebook.jpg'},
+{id: 10, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: 'image/cafe-automatic.jpg'},
+{id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: 'image/sdlg-2012.webp'},
+{id: 12, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: 'image/taukane-port.jpg'},
+{id: 13, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: 'image/varios-taukane.webp'}, 
+{id: 14, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: 'image/inicio-taukane.jpg'},
+{id:15}
+];
+
+const thumbis = [
+{id: 1, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png'},
+{id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
+{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
+{id: 4, name: 'Projeto Gráfico e Direção de Arte Web', src: 'image/megamidia-thumb.jpg'},
+{id: 5, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
+{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
+{id: 7, name: 'Direção de Arte Redes Sociais', src: 'image/toda-familia-tem.jpg'},
+{id: 8, name: 'Direção de Arte Redes Sociais', src: 'image/total-thumb.jpg'},
+{id: 9, name: 'Direção de Arte Redes Sociais',  src: 'image/volvo-posts-thumb.jpg'},
+{id: 10, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
+{id: 11, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
+{id: 12, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
+{id: 13, name: 'Direção de Arte Web', src: 'image/tauk-2008-thumb.jpg'},
+{id: 14, name: 'Direção de Arte Web', src: 'image/tauk-2004-thumb.jpg'},
+{id:15, last:<a href="/portfolio" className="d-block my-auto text-center">
+    <p>Portfolio</p>
+    <img
+        src="image/prev.jpg"
+        alt="< Portfolio Taukane"
+        title="< Portfolio Taukane"
+        className="img-fluid rounded shadow-lg border-0 opacity-100"
+        width={50}
+        height={50}
+    />
+</a>
+},
+];
 
 export default Portfolio
