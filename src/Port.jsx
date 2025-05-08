@@ -131,12 +131,14 @@ return (
                         <SwiperSlide key={panel.id} id="ancora">							
                             <h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
                             {panel.descricao}
-                            <img 
-                            src={panel.src} 
-                            alt={panel.name}
-                            className="img-fluid rounded shadow-lg"
-                            loading="lazy"
-                            />
+                            {panel.src ? (
+                                <img 
+                                src={panel.src} 
+                                alt={panel.name}
+                                className="img-fluid rounded shadow-lg"
+                                />
+                                ): null
+                            }
                             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     ))
