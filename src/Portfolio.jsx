@@ -1,45 +1,48 @@
 import { NavLink } from "react-router";
 import React, { useState } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Keyboard, Pagination, Navigation, Thumbs } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import DarkModeToggle from './assets/DarkModeToggle.jsx';
+
 const panels = [
   
     {id: 1, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: 'image/black-club-layout-v2.webp'},
-    {id: 3, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
-    {id: 4, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: 'image/sibras-site.webp'},
-    {id: 2, name: 'Projeto Gráfico e Direção de Arte Web', descricao: <p>Perini / Mercantil Rodrigues <small>/ 2017</small></p>, src: 'image/megamidia.webp'},
-    {id: 10, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: 'image/jornal-independente-big.jpg'},
-    {id: 7, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: 'image/emariot-2011.jpg'},
-    {id: 8, name: 'Direção de Arte Redes Sociais ', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/volvo-facebook-toda-familia-tem.jpg'},
-    {id: 9, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.jpg'},
-    {id: 11, name: 'Volvo CE Posts Facebook', descricao: <p>Direção de Arte Redes Sociais <small>/ 2012</small></p>, src: 'image/volvo-ce-da-arte-digital-facebook.jpg'},
-    {id: 12, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: 'image/cafe-automatic.jpg'},
-    {id: 13, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: 'image/sdlg-2012.webp'},
-    {id: 5, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: 'image/taukane-port.jpg'},
-    {id: 6, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: 'image/varios-taukane.webp'}, 
-    {id: 15, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: 'image/inicio-taukane.jpg'},
-    {id:16}
+    {id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: 'image/sibras-site.webp'},
+    {id: 4, name: 'Projeto Gráfico e Direção de Arte Web', descricao: <p>Perini / Mercantil Rodrigues <small>/ 2017</small></p>, src: 'image/megamidia.webp'},
+    {id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: 'image/jornal-independente-big.jpg'},
+    {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: 'image/emariot-2011.jpg'},
+    {id: 7, name: 'Direção de Arte Redes Sociais ', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/volvo-facebook-toda-familia-tem.jpg'},
+    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.jpg'},
+    {id: 9, name: 'Volvo CE Posts Facebook', descricao: <p>Direção de Arte Redes Sociais <small>/ 2012</small></p>, src: 'image/volvo-ce-da-arte-digital-facebook.jpg'},
+    {id: 10, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: 'image/cafe-automatic.jpg'},
+    {id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: 'image/sdlg-2012.webp'},
+    {id: 12, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: 'image/taukane-port.jpg'},
+    {id: 13, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: 'image/varios-taukane.webp'}, 
+    {id: 14, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: 'image/inicio-taukane.jpg'},
+    {id:15}
     ];
     
     const thumbis = [
     {id: 1, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png'},
-    {id: 3, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
-    {id: 4, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
-    {id: 2, name: 'Projeto Gráfico e Direção de Arte Web', src: 'image/megamidia-thumb.jpg'},
-    {id: 10, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
-    {id: 7, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
-    {id: 8, name: 'Direção de Arte Redes Sociais', src: 'image/toda-familia-tem.jpg'},
-    {id: 9, name: 'Direção de Arte Redes Sociais', src: 'image/total-thumb.jpg'},
-    {id: 11, name: 'Direção de Arte Redes Sociais',  src: 'image/volvo-posts-thumb.jpg'},
-    {id: 12, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
-    {id: 13, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
-    {id: 5, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
-    {id: 6, name: 'Direção de Arte Web', src: 'image/tauk-2008-thumb.jpg'},
-    {id: 15, name: 'Direção de Arte Web', src: 'image/tauk-2004-thumb.jpg'},
-    {id:16, last:<a href="/portfolio" className="d-block my-auto text-center">
+    {id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
+    {id: 4, name: 'Projeto Gráfico e Direção de Arte Web', src: 'image/megamidia-thumb.jpg'},
+    {id: 5, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
+    {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
+    {id: 7, name: 'Direção de Arte Redes Sociais', src: 'image/toda-familia-tem.jpg'},
+    {id: 8, name: 'Direção de Arte Redes Sociais', src: 'image/total-thumb.jpg'},
+    {id: 9, name: 'Direção de Arte Redes Sociais',  src: 'image/volvo-posts-thumb.jpg'},
+    {id: 10, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
+    {id: 11, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
+    {id: 12, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
+    {id: 13, name: 'Direção de Arte Web', src: 'image/tauk-2008-thumb.jpg'},
+    {id: 14, name: 'Direção de Arte Web', src: 'image/tauk-2004-thumb.jpg'},
+    {id:15, last:<a href="/portfolio" className="d-block my-auto text-center">
         <p>Portfolio</p>
         <img
             src="image/prev.jpg"
@@ -60,23 +63,24 @@ return (
     <span className="scroller"></span>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navegação">
+                <span className="navbar-toggler-icon"></span>
             </button>
+            <DarkModeToggle />
             <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                <NavLink className="nav-link" href="#" to="/">
-                    Taukane
-                </NavLink>
-                </li>
-                <li className="nav-item">
-                <NavLink  className="nav-link" to="/portfolio">Portfolio</NavLink>
-                </li>
-                <li className="nav-item">
-                <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio-taukane">Portfolio +</NavLink>
-                </li>
-            </ul>
+                <ul className="navbar-nav mt-3 hstack gap-5 d-block d-md-flex">
+                    <li className="nav-item h3">
+                    <NavLink className="nav-link" href="/" to="/">
+                        Taukane
+                    </NavLink>
+                    </li>
+                    <li className="nav-item h3">
+                    <NavLink  className="nav-link" to="/portfolio">Portfolio</NavLink>
+                    </li>
+                    <li className="nav-item h3">
+                    <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio-taukane">Portfolio +</NavLink>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

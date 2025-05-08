@@ -1,72 +1,21 @@
 
 import { NavLink } from "react-router";
 import React, { useState } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Keyboard, Pagination, Navigation, Thumbs } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-const panels = [
-{id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: 'image/mitsul.jpg'},
-{id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
-{id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
-{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
-{id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
-{id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
-{id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias.webp'},
-{id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
-{id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
-{id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
-{id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
-{id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
-{id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
-{id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
-{id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
-{id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
-{id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
-{id: 17},
-];
+import  * as bootstrap from 'bootstrap';
 
-const thumbis = [
-{id: 0, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
-{id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
-{id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
-{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
-{id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
-{id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
-{id: 6, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
-{id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
-{id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
-{id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
-{id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
-{id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
-{id: 12, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
-{id: 13, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
-{id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
-{id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
-{id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
-{id: 17,
-last:<a href="/portfolio-taukane" className="d-block text-center my-auto">
-    <p className="">Mais Projetos</p>
-    <img
-        src="image/more.png"
-        alt="+ Projetos Design"
-        title="+ Projetos Design"
-        className="rounded shadow-lg border-0 mx-auto my-auto"
-        width={50}
-        height={50} />
-</a>
-},
-];
-
-import * as bootstrap from 'bootstrap'
+import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
 function Port() {
-const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 return (
 <>
 <span className="scroller"></span>
@@ -75,14 +24,15 @@ return (
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
         </button>
+        <DarkModeToggle />
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul className="navbar-nav">
-            <li className="nav-item">
+        <ul className="navbar-nav mt-3 hstack gap-5">
+            <li className="nav-item h3">
             <NavLink className="nav-link" href="#" to="/">
                 Taukane
             </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item h3">
             <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio">Portfolio</NavLink>
             </li>
         </ul>
@@ -108,7 +58,7 @@ return (
 </div>
 <div className="container-fluid">
         <div className="row">
-            <div className="col-12 col-xxl-8 mx-auto">
+            <div className="col-12 col-lg-10 col-xxl-8 mx-auto">
                 <Swiper
                     style={{
                         '--swiper-pagination-color': '#f90',
@@ -141,9 +91,9 @@ return (
                 >
                 {
                     thumbis.map((tumbis) =>(
-                        <SwiperSlide key={tumbis.id} >
+                        <SwiperSlide key={tumbis.id}>
                             <a href="#ancora">
-                                <h4>{tumbis.name}</h4>   
+                                <h4 className="link-offset-3">{tumbis.name}</h4>   
                                 {tumbis.src ? (
                                     <img
                                     src={tumbis.src} 
@@ -158,7 +108,7 @@ return (
                 }
                 </Swiper>
             </div>
-            <div className="col-12 col-xxl-8 mx-auto">
+            <div className="col-12 col-lg-10 col-xxl-8 mx-auto">
                 <Swiper
                     style={{
                     '--swiper-navigation-color': '#ff9900',
@@ -198,5 +148,58 @@ return (
 
 </>
 )}
+
+const panels = [
+    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: 'image/mitsul.jpg'},
+    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
+    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
+    {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
+    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
+    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias.webp'},
+    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
+    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
+    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
+    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
+    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
+    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
+    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
+    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
+    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
+    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
+    {id: 17},
+    ];
+    
+    const thumbis = [
+    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
+    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
+    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
+    {id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
+    {id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
+    {id: 6, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
+    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
+    {id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
+    {id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
+    {id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
+    {id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
+    {id: 12, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
+    {id: 13, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
+    {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
+    {id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
+    {id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
+    {id: 17,
+    last:<a href="/portfolio-taukane" className="d-block text-center link-offset-3 link-underline link-underline-opacity-0 link-underline-opacity-50-hover">
+        <p>Mais Projetos</p>
+        <img
+            src="image/more.png"
+            alt="+ Projetos Design"
+            title="+ Projetos Design"
+            className="rounded shadow-lg border-0 mx-auto"
+            width={50}
+            height={50} />
+    </a>
+    },
+    ];
 
 export default Port

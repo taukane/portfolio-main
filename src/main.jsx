@@ -1,15 +1,15 @@
-import ReactDOM from 'react-dom/client'
-
+import ReactDOM from 'react-dom/client';
+import React, { useState } from 'react';
 import {
 	createBrowserRouter,
 	RouterProvider,
 } from "react-router";
 
-import './default.scss'
+import './default.scss';
 
-import App from './App.jsx'
-import Port from './Port.jsx'
-import Portfolio from './Portfolio.jsx'
+import App from './App.jsx';
+import Port from './Port.jsx';
+import Portfolio from './Portfolio.jsx';
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -27,13 +27,37 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-const router = createBrowserRouter([
-	{ path: "/", Component: App },
-	{ path: "/portfolio", Component: Port },
-	{ path: "/portfolio-taukane", Component: Portfolio },
-	{ path: "*", Component: App }
-]); 
+const rootElement = document.getElementById('root');
 
-ReactDOM.createRoot(root).render(
-	<RouterProvider router={router} />
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: (
+            <>
+                <App />
+            </>
+        )
+    },
+    {
+        path: "/portfolio",
+        element: (
+            <>
+                <Port />
+            </>
+        )
+    },
+    {
+        path: "/portfolio-taukane",
+        element: (
+            <>              
+			<Portfolio />
+            </>
+        )
+    },
+]);
+
+ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
 );
