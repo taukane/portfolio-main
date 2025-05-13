@@ -1,6 +1,5 @@
 {
   "hosting": {
-    
     "public": "dist",
     "headers": [ {
       "source": "**/*.@(jpg|jpeg|gif|png)",
