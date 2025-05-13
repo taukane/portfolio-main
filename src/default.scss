@@ -259,9 +259,18 @@ img  {
   
 .swiper-slide img {
     max-width: 100%;
-    background: $white;
+}
+@include color-mode(dark) {
+.swiper-slide img{
+background: $dark;
+}
 }
 
+@include color-mode(light) {
+.swiper-slide img{
+background: $light;
+}
+}
 .swiper-slide-thumb-active{
     img{
         filter: sepia(0) hue-rotate(0deg) saturate(100%) !important;

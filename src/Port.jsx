@@ -14,6 +14,59 @@ import  * as bootstrap from 'bootstrap';
 
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
+const panels = [
+    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: 'image/mitsul.jpg'},
+    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
+    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
+    {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
+    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
+    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias.webp'},
+    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
+    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
+    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
+    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
+    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
+    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
+    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
+    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
+    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
+    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
+    {id: 17},
+];
+
+const thumbis = [
+    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
+    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
+    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
+    {id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
+    {id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
+    {id: 6, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
+    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
+    {id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
+    {id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
+    {id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
+    {id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
+    {id: 12, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
+    {id: 13, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
+    {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
+    {id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
+    {id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
+    {id: 17,
+    last:<a href="/portfolio-taukane" className="d-block text-center link-offset-3 link-underline link-underline-opacity-0 link-underline-opacity-50-hover">
+        <p>Mais Projetos</p>
+        <img
+            src="image/more.png"
+            alt="+ Projetos Design"
+            title="+ Projetos Design"
+            className="rounded shadow-lg border-0 mx-auto"
+            width={50}
+            height={50} />
+    </a>
+    },
+];
+
 function Port() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 return (
@@ -58,16 +111,14 @@ return (
 </div>
 <div className="container-fluid">
         <div className="row">
-            <div className="col-12 col-lg-10 col-xxl-8 mx-auto">
+            <div className="col-12 col-lg-11 col-xxl-auto mx-auto">
                 <Swiper
                     style={{
                         '--swiper-pagination-color': '#f90',
                         }}
                     modules={[FreeMode, Pagination, Thumbs]}
                     onSwiper={setThumbsSwiper}
-                    // loop={true}
                     spaceBetween={10}
-                    slidesPerView={4}
                     pagination={{
                         clickable: true,
                     }}
@@ -75,16 +126,16 @@ return (
                     watchSlidesProgress={true}
                     breakpoints={{
                         '@0.00': {
-                        slidesPerView: 2,
-                        spaceBetween: 7,
-                        },
-                        '@1.00': {
                         slidesPerView: 3,
                         spaceBetween: 8,
                         },
-                        '@1.50': {
+                        '@1.00': {
                         slidesPerView: 4,
                         spaceBetween: 10,
+                        },
+                        '@1.50': {
+                        slidesPerView: 6,
+                        spaceBetween: 20,
                         },
                     }}
                     id="works"
@@ -108,7 +159,7 @@ return (
                 }
                 </Swiper>
             </div>
-            <div className="col-12 col-lg-10 col-xxl-8 mx-auto">
+            <div className="col-12 col-lg-11 col-xxl-auto mx-auto">
                 <Swiper
                     style={{
                     '--swiper-navigation-color': '#ff9900',
@@ -150,58 +201,5 @@ return (
 
 </>
 )}
-
-const panels = [
-    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: 'image/mitsul.jpg'},
-    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
-    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
-    {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
-    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
-    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias.webp'},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
-    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
-    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
-    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
-    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
-    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
-    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
-    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
-    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
-    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
-    {id: 17},
-    ];
-    
-    const thumbis = [
-    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
-    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
-    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
-    {id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
-    {id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
-    {id: 6, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
-    {id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
-    {id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
-    {id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
-    {id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
-    {id: 12, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
-    {id: 13, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
-    {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
-    {id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
-    {id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
-    {id: 17,
-    last:<a href="/portfolio-taukane" className="d-block text-center link-offset-3 link-underline link-underline-opacity-0 link-underline-opacity-50-hover">
-        <p>Mais Projetos</p>
-        <img
-            src="image/more.png"
-            alt="+ Projetos Design"
-            title="+ Projetos Design"
-            className="rounded shadow-lg border-0 mx-auto"
-            width={50}
-            height={50} />
-    </a>
-    },
-    ];
 
 export default Port
