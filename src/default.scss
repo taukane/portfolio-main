@@ -21,6 +21,7 @@ html {
 }
 
 body {
+    height: 100%;
     font-family: 'Courier New', Courier, monospace;
     background: -moz-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
     background: -webkit-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
@@ -258,11 +259,13 @@ img  {
 }
   
 .swiper-slide img {
-    max-width: 100%;
-}
-@include color-mode(dark) {
-.swiper-slide img{
-background: $dark;
+    max-width: 100%; 
+    height: auto;     
+    display: block;  
+    @include color-mode(dark) {
+    .swiper-slide img{
+    background: $dark;
+    }
 }
 }
 

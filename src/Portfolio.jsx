@@ -7,7 +7,7 @@ descricao: <p>CBD Med <small>/ 2018</small></p>,
 src: ['image/cbd-med-layout-home-logo.webp', null],
 },
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: ['image/sibras-site.webp', null]},
-{id: 4, name: 'Projeto Gráfico e Direção de Arte Web', descricao: <p>Perini / Mercantil Rodrigues <small>/ 2017</small></p>, src: ['image/megamidia.webp', null]},
+{id: 4, name: 'Projeto Gráfico e Direção de Arte Web', descricao: <p>Perini / Mercantil Rodrigues <small>/ 2017</small></p>, src: ['image/megamidia.webp', 'image/megamidia-2.webp']},
 {id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg', null]},
 {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg', null]},
 {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.jpg', null]},
@@ -184,7 +184,6 @@ return (
                     navigation={panel.src.length > 1}
                     pagination={{ clickable: true }}
                     autoHeight={true}
-                    loop={true}
                 >
                     <SwiperSlide>
                         <img

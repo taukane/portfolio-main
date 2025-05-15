@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
@@ -15,23 +15,23 @@ import  * as bootstrap from 'bootstrap';
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
 const panels = [
-    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: 'image/mitsul.jpg'},
-    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: 'image/Volkswagen-layout-site.png'},
-    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: 'image/honda-veiculos.jpg'},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: 'image/layout-blog-autoconf-v2-01.jpg'},
-    {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/facas-embalagens.png'},
-    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/laww-layout-home-v2.webp'},
-    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: 'image/serro-carrocerias.webp'},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/probat-leogap.webp'},
-    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/roldao-posts.webp'},
-    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/landing-reanult-globo.jpg'},
-    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/marmoraria-florianopolis-2014.jpg'},
-    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/zeta-estaleiro-redesign.jpg'},
-    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/curitiba-cultura.jpg'},
-    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/shopping-total.webp'},
-    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/work22_big.webp'},
-    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: 'image/boticario.jpg'},
-    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: 'image/gazeta.webp'},
+    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: ['image/mitsul.jpg', null, null]},
+    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', null, null]},
+    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', null, null]},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: ['image/layout-blog-autoconf-v2-01.jpg', null, null]},
+    {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png', null, null]},
+    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp', null, null]},
+    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp', null, null]},
+    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: ['image/probat-leogap.webp', null, null]},
+    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', null, null]},
+    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg', null, null]},
+    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg', null, null]},
+    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['https://i.imgur.com/Jb3KlSr.jpeg', null, null]},
+    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: ['image/curitiba-cultura.jpg', null, null]},
+    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.webp', null, null]},
+    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['https://drive.google.com/uc?id=1NPdFF2YPQlNa4nVVyK6e3pFh4iqAwnkc', null, null]},
+    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: ['image/boticario.jpg', null, null]},
+    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: ['image/gazeta.webp', null, null]},
     {id: 17},
 ];
 
@@ -68,7 +68,27 @@ const thumbis = [
 ];
 
 function Port() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+        const [thumbsSwiper, setThumbsSwiper] = useState(null);
+        const [activeHash, setActiveHash] = useState(null);
+        const panelsSwiperRef = useRef(null);
+    
+        const thumbs = useCallback((Swiper) => {
+            setThumbsSwiper(Swiper);
+        }, [])
+    
+        const hash = useCallback((Swiper) => {
+            const hash = Swiper.params.hashNavigation;
+            if(!hash) return;
+    
+            const update = () => {
+                const hash = Swiper.slides[Swiper.activeIndex].getAttribute('data-hash');
+                if(!hash) return;
+                document.location.hash = hash;
+            }
+    
+            Swiper.on('slideChange', update);
+            Swiper.on('slideChangeTransitionEnd', update);
+        }, [])
 return (
 <>
 <span className="scroller"></span>
@@ -164,35 +184,52 @@ return (
                     style={{
                         '--swiper-navigation-color': '#ff9900',
                     }}
-                    modules={[FreeMode, Keyboard, Navigation, Thumbs, HashNavigation]}
+                    modules={[Keyboard, Navigation, Thumbs, HashNavigation]}
                     hashNavigation={{
                         watchState: true,
                     }}
+                    onSwiper={hash}
                     thumbs={{ swiper: thumbsSwiper }}
-                    lazy={true.toString()}
                     loop={true}
                     spaceBetween={40}
                     keyboard={{
                         enabled: true,
                     }}
                     navigation={true}
-                    grabCursor={true}
-                    className="mb-3"
                     autoHeight={true}
+                    ref={panelsSwiperRef}
                 >
                     {panels.map((panel) => (
                         <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora">
-                            <h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
-                            {panel.descricao}
-                            {panel.src ? (
-                                <img
-                                    src={panel.src}
-                                    alt={panel.name}
-                                    className="img-fluid rounded shadow-lg"
-                                />
-                            ) : null
-                            }
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <h5 className="pt-4 ps-4 fw-bold text-light">{panel.name}</h5>
+                            <div className="ps-4">{panel.descricao}</div>
+                            {panel.src && panel.src.length > 0 ? (
+                                <Swiper
+                                    spaceBetween={40}
+                                    slidesPerView={1}
+                                    modules={[Navigation, Pagination]}
+                                    navigation={panel.src.length > 1}
+                                    pagination={{ clickable: true }}
+                                    autoHeight={true}
+                                >
+                                    <SwiperSlide>
+                                        <img
+                                            src={panel.src[0]}
+                                            alt={`${panel.name} - Design 1`}
+                                            className="img-fluid rounded shadow-lg"
+                                        />
+                                    </SwiperSlide>
+                                    {panel.src[1] && (
+                                        <SwiperSlide>
+                                            <img
+                                                src={panel.src[1]}
+                                                alt={`${panel.name} - Design 2`}
+                                                className="img-fluid rounded shadow-lg"
+                                            />
+                                        </SwiperSlide>
+                                    )}
+                                </Swiper>
+                            ) : null}
                         </SwiperSlide>
                     ))}
                 </Swiper>
