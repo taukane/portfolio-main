@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import React, { useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Keyboard, Pagination, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
@@ -53,7 +53,7 @@ const thumbis = [
     {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
     {id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
     {id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
-    {id: 17,
+    {id: 17, 
     last:<a href="/portfolio-taukane" className="d-block text-center link-offset-3 link-underline link-underline-opacity-0 link-underline-opacity-50-hover">
         <p>Mais Projetos</p>
         <img
@@ -72,7 +72,7 @@ function Port() {
 return (
 <>
 <span className="scroller"></span>
-<nav className="navbar navbar-expand-lg bg-body-tertiary" loading="lazy">
+<nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -162,9 +162,12 @@ return (
             <div className="col-12 col-lg-11 col-xxl-auto mx-auto">
                 <Swiper
                     style={{
-                    '--swiper-navigation-color': '#ff9900',
+                        '--swiper-navigation-color': '#ff9900',
                     }}
-                    modules={[FreeMode, Keyboard, Navigation, Thumbs]}
+                    modules={[FreeMode, Keyboard, Navigation, Thumbs, HashNavigation]}
+                    hashNavigation={{
+                        watchState: true,
+                    }}
                     thumbs={{ swiper: thumbsSwiper }}
                     lazy={true.toString()}
                     loop={true}
@@ -177,23 +180,21 @@ return (
                     className="mb-3"
                     autoHeight={true}
                 >
-                {
-                    panels.map((panel) => (
-                        <SwiperSlide key={panel.id} id="ancora">							
+                    {panels.map((panel) => (
+                        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora">
                             <h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
                             {panel.descricao}
                             {panel.src ? (
-                                <img 
-                                src={panel.src} 
-                                alt={panel.name}
-                                className="img-fluid rounded shadow-lg"
+                                <img
+                                    src={panel.src}
+                                    alt={panel.name}
+                                    className="img-fluid rounded shadow-lg"
                                 />
-                                ): null
+                            ) : null
                             }
                             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
-                    ))
-                }
+                    ))}
                 </Swiper>
             </div>
         </div>
