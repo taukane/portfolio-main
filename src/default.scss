@@ -259,20 +259,21 @@ img  {
 }
   
 .swiper-slide img {
-    max-width: 100%; 
-    height: auto;     
-    display: block;  
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     @include color-mode(dark) {
-    .swiper-slide img{
-    background: $dark;
+        .swiper-slide img{
+        background: $dark;
+        }
     }
-}
 }
 
 @include color-mode(light) {
-.swiper-slide img{
-background: $light;
-}
+    .swiper-slide img{
+    background: $light;
+    }
 }
 .swiper-slide-thumb-active{
     img{
@@ -335,7 +336,6 @@ background: $light;
     .swiper-slide-thumb-active{
         img{
             border:solid 5px #0f0f10 !important;
-            // opacity: .4 !important;
         }
     }
     .swiper-button-next, .swiper-button-prev{

@@ -7,11 +7,8 @@ descricao: <p>CBD Med <small>/ 2018</small></p>,
 src: ['image/cbd-med-layout-home-logo.webp', null],
 },
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: ['image/sibras-site.webp', null]},
-{id: 4, name: 'Projeto Gráfico e Direção de Arte Web', descricao: <p>Perini / Mercantil Rodrigues <small>/ 2017</small></p>, src: ['image/megamidia.webp', 'image/megamidia-2.webp']},
 {id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg', null]},
 {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg', null]},
-{id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.jpg', null]},
-{id: 9, name: 'Volvo CE Posts Facebook', descricao: <p>Direção de Arte Redes Sociais <small>/ 2012</small></p>, src: ['image/volvo-2012.jpg', 'image/volvo-facebook-toda-familia-tem.jpg']},
 {id: 10, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: ['image/cafe-automatic.jpg', null]},
 {id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: ['image/sdlg-2012.webp', 'image/sdlg-2012-2.jpg']},
 {id: 12, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: ['image/taukane-port.jpg', null]},
@@ -24,11 +21,8 @@ const thumbis = [
 {id: 1, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png'},
 {id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
-{id: 4, name: 'Projeto Gráfico e Direção de Arte Web', src: 'image/megamidia-thumb.jpg'},
 {id: 5, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
 {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
-{id: 8, name: 'Direção de Arte Redes Sociais', src: 'image/total-thumb.jpg'},
-{id: 9, name: 'Direção de Arte Redes Sociais',  src: 'image/volvo-app-thumb.jpg'},
 {id: 10, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
 {id: 11, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
 {id: 12, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
@@ -184,6 +178,7 @@ return (
                     navigation={panel.src.length > 1}
                     pagination={{ clickable: true }}
                     autoHeight={true}
+
                 >
                     <SwiperSlide>
                         <img
@@ -197,7 +192,25 @@ return (
                             <img
                                 src={panel.src[1]}
                                 alt={`${panel.name} - Design 2`}
-                                className="img-fluid rounded shadow-lg"
+                                className="img-fluid shadow"
+                            />
+                        </SwiperSlide>
+                    )}
+                    {panel.src[2] && (
+                        <SwiperSlide>
+                            <img
+                                src={panel.src[2]}
+                                alt={`${panel.name} - Design 3`}
+                                className="img-fluid"
+                            />
+                        </SwiperSlide>
+                    )}
+                    {panel.src[3] && (
+                        <SwiperSlide>
+                            <img
+                                src={panel.src[3]}
+                                alt={`${panel.name} - Design 4`}
+                                className="img-fluid"
                             />
                         </SwiperSlide>
                     )}

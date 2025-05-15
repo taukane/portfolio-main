@@ -23,14 +23,15 @@ const panels = [
     {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp', null, null]},
     {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp', null, null]},
     {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: ['image/probat-leogap.webp', null, null]},
-    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', null, null]},
+    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Megamidia  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', ],
+        //'image/megamidia-2.webp', 'image/megamidia-3.webp', 'image/megamidia-4.webp']},
     {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg', null, null]},
     {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg', null, null]},
     {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['https://i.imgur.com/Jb3KlSr.jpeg', null, null]},
     {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: ['image/curitiba-cultura.jpg', null, null]},
-    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.webp', null, null]},
-    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['https://drive.google.com/uc?id=1NPdFF2YPQlNa4nVVyK6e3pFh4iqAwnkc', null, null]},
-    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: ['image/boticario.jpg', null, null]},
+    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.webp', 'image/shopping-total.jpg', null]},
+    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg']},
+    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: ['image/boticario.jpg', 'image/boticario-2.jpg', 'image/boticario-3.jpg']},
     {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: ['image/gazeta.webp', null, null]},
     {id: 17},
 ];
@@ -200,11 +201,15 @@ return (
                     ref={panelsSwiperRef}
                 >
                     {panels.map((panel) => (
-                        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora">
-                            <h5 className="pt-4 ps-4 fw-bold text-light">{panel.name}</h5>
-                            <div className="ps-4">{panel.descricao}</div>
+                        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora" className="pb-3">
+                            <h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
+                            <div>{panel.descricao}</div>
                             {panel.src && panel.src.length > 0 ? (
                                 <Swiper
+                                    style={{
+                                        '--swiper-navigation-color': '#f40',
+                                        'height': 'auto'
+                                    }}
                                     spaceBetween={40}
                                     slidesPerView={1}
                                     modules={[Navigation, Pagination]}
@@ -224,6 +229,33 @@ return (
                                             <img
                                                 src={panel.src[1]}
                                                 alt={`${panel.name} - Design 2`}
+                                                className="img-fluid rounded shadow-lg"
+                                            />
+                                        </SwiperSlide>
+                                    )}
+                                    {panel.src[2] && (
+                                        <SwiperSlide>
+                                            <img
+                                                src={panel.src[2]}
+                                                alt={`${panel.name} - Design 3`}
+                                                className="img-fluid rounded shadow-lg"
+                                            />
+                                        </SwiperSlide>
+                                    )}
+                                    {panel.src[3] && (
+                                        <SwiperSlide>
+                                            <img
+                                                src={panel.src[3]}
+                                                alt={`${panel.name} - Design 4`}
+                                                className="img-fluid rounded shadow-lg"
+                                            />
+                                        </SwiperSlide>
+                                    )}
+                                    {panel.src[4] && (
+                                        <SwiperSlide>
+                                            <img
+                                                src={panel.src[4]}
+                                                alt={`${panel.name} - Design 5`}
                                                 className="img-fluid rounded shadow-lg"
                                             />
                                         </SwiperSlide>
