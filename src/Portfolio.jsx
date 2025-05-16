@@ -1,177 +1,230 @@
+const panels = [
+{id: 1, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp', null ]},
+{
+id: 2,
+name: 'Branding + Website Interface + Desenvolvimento Wordpress',
+descricao: <p>CBD Med <small>/ 2018</small></p>,
+src: ['image/cbd-med-layout-home-logo.webp', null],
+},
+{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: ['image/sibras-site.webp', null]},
+{id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg', null]},
+{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg', null]},
+{id: 10, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: ['image/cafe-automatic.jpg', null]},
+{id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: ['https://raw.githubusercontent.com/taukane/portfolio-main/594e0fd0008231daa9b2afb0005d7d0aac9a4046/dist/image/sdlg-2012.webp?raw=true', 'image/sdlg-2012-2.jpg']},
+{id: 12, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: ['image/taukane-port.jpg', null]},
+{id: 13, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: ['image/varios-taukane.webp', null]},
+{id: 14, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: ['image/inicio-taukane.jpg', null]},
+{id:15,src: null,}
+];
+
+const thumbis = [
+{id: 1, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png'},
+{id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
+{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
+{id: 5, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
+{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
+{id: 10, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
+{id: 11, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
+{id: 12, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
+{id: 13, name: 'Direção de Arte Web', src: 'image/tauk-2008-thumb.jpg'},
+{id: 14, name: 'Direção de Arte Web', src: 'image/tauk-2004-thumb.jpg'},
+{id:15, last:<a href="/portfolio" className="d-block my-auto text-center">
+    <p>Portfolio</p>
+    <img
+        src="image/prev.jpg"
+        alt="< Portfolio Taukane"
+        title="< Portfolio Taukane"
+        className="img-fluid rounded shadow-lg border-0 opacity-100"
+        width={50}
+        height={50}
+    />
+</a>
+},
+];
+
 import { NavLink } from "react-router";
-import React, { useRef, useState } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Keyboard, Pagination, Navigation, Thumbs } from 'swiper/modules';
-import 'swiper/css/zoom';
+import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const panels = [
-    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: 'image/mitsul.jpg'},
-    {id: 2, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: 'image/black-club-layout-v2.webp'},
-    {id: 3, name: 'Direção de Arte', descricao: <p>Autoconf <small>/ 2006</small></p>, src: 'image/cafe-automatic.jpg'},
-    {id: 4, name: 'Tabloides', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: 'image/megamidia.webp'},
-    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: 'image/sdlg-2012.webp'},
-    {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>CBD Med <small>/ 2018</small></p>, src: 'image/cbd-med-layout-home-logo.webp'},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: 'image/sibras-site.webp'},
-    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: 'image/taukane-port.jpg'},
-    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: 'image/varios-taukane.webp'},
-    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: 'image/emariot-2011.jpg'},
-    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: 'image/volvo-facebook-toda-familia-tem.jpg'},
-    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: 'image/work2_big.jpg'},
-    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: 'image/jornal-independente-big.jpg'},
-    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/taukane-port.jpg'},    
-    {id: 15, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: 'image/inicio-taukane.jpg'}
-    ];
-    
-    const thumbis = [
-    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
-    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/blackclub-thumb.png'},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
-    {id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
-    {id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
-    {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
-    {id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
-    {id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
-    {id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
-    {id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
-    {id: 12, name: 'Projeto Gráfico', src: 'image/work15.jpg'},
-    {id: 13, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
-    {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
-    {id: 15, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
-    ];
+import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
 function Portfolio() {
-const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [activeHash, setActiveHash] = useState(null);
+    const panelsSwiperRef = useRef(null);
+
+    const thumbs = useCallback((Swiper) => {
+        setThumbsSwiper(Swiper);
+    }, [])
+
+    const hash = useCallback((Swiper) => {
+        const hash = Swiper.params.hashNavigation;
+        if(!hash) return;
+
+        const update = () => {
+            const hash = Swiper.slides[Swiper.activeIndex].getAttribute('data-hash');
+            if(!hash) return;
+            document.location.hash = hash;
+        }
+
+        Swiper.on('slideChange', update);
+        Swiper.on('slideChangeTransitionEnd', update);
+    }, [])
 return (
 <>
 <span className="scroller"></span>
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navegação">
+            <span className="navbar-toggler-icon"></span>
         </button>
+        <DarkModeToggle />
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul className="navbar-nav">
-            <li className="nav-item">
-            <NavLink className="nav-link" href="#" to="/">
-                Taukane
-            </NavLink>
-            </li>
-            <li className="nav-item">
-            <NavLink  className="nav-link" to="/portfolio">Portfolio</NavLink>
-            </li>
-            <li className="nav-item">
-            <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio-taukane">Portfolio +</NavLink>
-            </li>
-        </ul>
+            <ul className="navbar-nav mt-3 hstack gap-5 d-block d-md-flex">
+                <li className="nav-item h3">
+                <NavLink className="nav-link" href="/" to="/">
+                    Taukane
+                </NavLink>
+                </li>
+                <li className="nav-item h3">
+                <NavLink  className="nav-link" to="/portfolio">Portfolio</NavLink>
+                </li>
+                <li className="nav-item h3">
+                <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio-taukane">Portfolio +</NavLink>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
-<div className="container-fluid">
-    <div className="row">
-        <div className="col-12 col-xxl-8 mx-auto">
-            <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-12 col-xxl-8 mx-auto">
-                            <Swiper
-                                style={{
-                                    '--swiper-pagination-color': '#f90',
-                                    }}
-                                modules={[FreeMode, Pagination, Thumbs]}
-                                onSwiper={setThumbsSwiper}
-                                loop={true}
-                                spaceBetween={10}
-                                slidesPerView={4}
-                                pagination={{
-                                    clickable: true,
-                                }}
-                                freeMode={true}
-                                watchSlidesProgress={true}
-                                breakpoints={{
-                                    '@0.00': {
-                                    slidesPerView: 2,
-                                    spaceBetween: 3,
-                                    },
-                                    '@1.00': {
-                                    slidesPerView: 3,
-                                    spaceBetween: 8,
-                                    },
-                                    '@1.50': {
-                                    slidesPerView: 4,
-                                    spaceBetween: 10,
-                                    },
-                                }}
-                                id="works"
-                            >
-                            {
-                                thumbis.map((tumbis) =>(
-                                    <SwiperSlide key={tumbis.id} >
-                                        <a href="#ancora">
-                                            <h4>{tumbis.name}</h4>
-                                            <img
-                                            src={tumbis.src} 
-                                            alt={tumbis.name}
-                                            />
-                                        </a>
-                                    </SwiperSlide>
-                                ))
-                            }
-                            </Swiper>
-                        </div>
-                        <div className="col-12 col-xxl-8 mx-auto">
-                            <Swiper
-                                style={{
-                                '--swiper-navigation-color': '#ff9900',
-                                }}
-                                modules={[FreeMode, Keyboard, Navigation, Thumbs]}
-                                thumbs={{ swiper: thumbsSwiper }}
-                                lazy={true.toString()}
-                                loop={true}
-                                zoom={true}
-                                spaceBetween={40}
-                                keyboard={{
-                                    enabled: true,
-                                }}
-                                pagination={{
-                                clickable: true,
-                                }}
-                                navigation={true}
-                                autoHeight={true}
-                            >
-                            {
-                                panels.map((panel) => (
-                                    <SwiperSlide key={panel.id} id="ancora">							
-                                        <h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
-                                        {panel.descricao}
-                                        <img 
-                                        src={panel.src} 
-                                        alt={panel.name}
-                                        className="img-fluid rounded shadow-lg"
-                                        loading="lazy"
-                                        />
-                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                    </SwiperSlide>
-                                ))
-                            }
-                            </Swiper>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div>
-</div>
-<a href="/portfolio" className="d-flex align-items-center justify-content-center my-5">
-    <img
-        src="image/prev.jpg"
-        alt="Criação de sites Wordpress"
-        title="Criação de sites Laravel"
-        className="img-fluid rounded shadow-lg"
-        width={50}
-        height={50}
-    />
-</a>
+<Swiper
+    style={{
+        '--swiper-pagination-color': '#f90',
+    }}
+    modules={[FreeMode, Pagination, Thumbs, HashNavigation]}
+    hashNavigation={{
+        watchState: true,
+    }}
+    onSwiper={thumbs}
+    loop={true}
+    spaceBetween={10}
+    pagination={{
+        clickable: true,
+    }}
+    freeMode={true}
+    watchSlidesProgress={true}
+    breakpoints={{
+        '@0.00': {
+            slidesPerView: 2,
+            spaceBetween: 3,
+        },
+        '@1.00': {
+            slidesPerView: 3,
+            spaceBetween: 8,
+        },
+        '@1.50': {
+            slidesPerView: 6,
+            spaceBetween: 10,
+        },
+    }}
+    id="works"
+>
+    {thumbis.map((tumbis) => (
+        <SwiperSlide key={tumbis.id} data-hash={`slide-${tumbis.id}`}>
+            <a href="#ancora">
+                <h4>{tumbis.name}</h4>
+                {tumbis.src ? (
+                    <img
+                        src={tumbis.src}
+                        alt={tumbis.name}
+                    />
+                ) : null}
+            </a>
+            {tumbis.last}
+        </SwiperSlide>
+    ))}
+</Swiper>
+<Swiper
+    style={{
+        '--swiper-navigation-color': '#ff9900',
+    }}
+    modules={[Keyboard, Navigation, Thumbs, HashNavigation]}
+    hashNavigation={{
+        watchState: true,
+    }}
+    onSwiper={hash}
+    thumbs={{ swiper: thumbsSwiper }}
+    loop={true}
+    spaceBetween={40}
+    keyboard={{
+        enabled: true,
+    }}
+    navigation={true}
+    autoHeight={true}
+    ref={panelsSwiperRef}
+>
+    {panels.map((panel) => (
+        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora">
+            <h5 className="pt-4 ps-4 fw-bold text-light">{panel.name}</h5>
+            <div className="ps-4">{panel.descricao}</div>
+            {panel.src && panel.src.length > 0 ? (
+                <Swiper
+                    spaceBetween={40}
+                    slidesPerView={1}
+                    modules={[Navigation, Pagination]}
+                    navigation={panel.src.length > 1}
+                    pagination={{ clickable: true }}
+                    autoHeight={true}
+                >
+                    <SwiperSlide>
+                        <img
+                            src={panel.src[0]}
+                            alt={`${panel.name} - Design 1`}
+                            className="img-fluid rounded shadow-lg"
+                        />
+                        <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
+                    </SwiperSlide>
+                    {panel.src[1] && (
+                        <SwiperSlide>
+                            <img
+                                src={panel.src[1]}
+                                alt={`${panel.name} - Design 2`}
+                                className="img-fluid shadow"
+                            />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
+                        </SwiperSlide>
+                    )}
+                    {panel.src[2] && (
+                        <SwiperSlide>
+                            <img
+                                src={panel.src[2]}
+                                alt={`${panel.name} - Design 3`}
+                                className="img-fluid"
+                            />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
+                        </SwiperSlide>
+                    )}
+                    {panel.src[3] && (
+                        <SwiperSlide>
+                            <img
+                                src={panel.src[3]}
+                                alt={`${panel.name} - Design 4`}
+                                className="img-fluid"
+                            />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
+                        </SwiperSlide>
+                    )}
+                </Swiper>
+            ) : null}
+            
+        </SwiperSlide>
+    ))}
+
+</Swiper>
+<hr className="border-0"/>
 </>
 )
 }
