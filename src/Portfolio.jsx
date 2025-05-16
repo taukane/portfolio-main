@@ -10,7 +10,7 @@ src: ['image/cbd-med-layout-home-logo.webp', null],
 {id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg', null]},
 {id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg', null]},
 {id: 10, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: ['image/cafe-automatic.jpg', null]},
-{id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: ['image/sdlg-2012.webp', 'image/sdlg-2012-2.jpg']},
+{id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: ['https://raw.githubusercontent.com/taukane/portfolio-main/594e0fd0008231daa9b2afb0005d7d0aac9a4046/dist/image/sdlg-2012.webp?raw=true', 'image/sdlg-2012-2.jpg']},
 {id: 12, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: ['image/taukane-port.jpg', null]},
 {id: 13, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: ['image/varios-taukane.webp', null]},
 {id: 14, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: ['image/inicio-taukane.jpg', null]},
@@ -178,7 +178,6 @@ return (
                     navigation={panel.src.length > 1}
                     pagination={{ clickable: true }}
                     autoHeight={true}
-
                 >
                     <SwiperSlide>
                         <img
@@ -186,6 +185,7 @@ return (
                             alt={`${panel.name} - Design 1`}
                             className="img-fluid rounded shadow-lg"
                         />
+                        <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                     </SwiperSlide>
                     {panel.src[1] && (
                         <SwiperSlide>
@@ -194,6 +194,7 @@ return (
                                 alt={`${panel.name} - Design 2`}
                                 className="img-fluid shadow"
                             />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                         </SwiperSlide>
                     )}
                     {panel.src[2] && (
@@ -203,6 +204,7 @@ return (
                                 alt={`${panel.name} - Design 3`}
                                 className="img-fluid"
                             />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                         </SwiperSlide>
                     )}
                     {panel.src[3] && (
@@ -212,12 +214,15 @@ return (
                                 alt={`${panel.name} - Design 4`}
                                 className="img-fluid"
                             />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                         </SwiperSlide>
                     )}
                 </Swiper>
             ) : null}
+            
         </SwiperSlide>
     ))}
+
 </Swiper>
 <hr className="border-0"/>
 </>
