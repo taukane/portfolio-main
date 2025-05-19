@@ -157,6 +157,7 @@ return (
     }}
     onSwiper={hash}
     thumbs={{ swiper: thumbsSwiper }}
+    lazy={true.toString()}
     loop={true}
     spaceBetween={40}
     keyboard={{
@@ -175,6 +176,7 @@ return (
                     spaceBetween={40}
                     slidesPerView={1}
                     modules={[Navigation, Pagination]}
+                    lazy={true.toString()}
                     navigation={panel.src.length > 1}
                     pagination={{ clickable: true }}
                     autoHeight={true}

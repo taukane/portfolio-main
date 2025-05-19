@@ -18,11 +18,11 @@ const panels = [
     {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: ['image/mitsul.jpg', null, null]},
     {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', null, null]},
     {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', null, null]},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: ['https://github.com/taukane/portfolio-taukane/blob/main/public/image/layout-blog-autoconf-v2-01.jpg?raw=true?raw=true', null, null]},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: ['https://github.com/taukane/portfolio-taukane/blob/main/public/image/layout-blog-autoconf-v2-01.jpg?raw=true', null, null]},
     {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png', null, null]},
     {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp', null, null]},
     {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp', null, null]},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: ['https://raw.githubusercontent.com/taukane/portfolio-main/594e0fd0008231daa9b2afb0005d7d0aac9a4046/dist/image/probat-leogap.webp?raw=true', null, null]},
+    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg', null]},
     {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Megamidia  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', ]},
        // 'image/megamidia-2.webp', 'image/megamidia-3.webp', 'image/megamidia-4.webp']},
     {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg', null, null]},
@@ -191,7 +191,6 @@ return (
                     }}
                     onSwiper={hash}
                     thumbs={{ swiper: thumbsSwiper }}
-                    lazy={true.toString()}
                     loop={true}
                     spaceBetween={40}
                     keyboard={{
@@ -226,7 +225,7 @@ return (
                                             className="img-fluid rounded shadow-lg"
                                             loading="lazy"
                                         />
-                                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </SwiperSlide>
                                     {panel.src[1] && (
                                         <SwiperSlide>
@@ -236,7 +235,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                                                <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[2] && (
@@ -247,7 +246,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                                                <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[3] && (
@@ -258,7 +257,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                                                <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[4] && (
@@ -269,7 +268,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                                                <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                 </Swiper>
