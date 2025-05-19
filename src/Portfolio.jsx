@@ -7,28 +7,28 @@ descricao: <p>CBD Med <small>/ 2018</small></p>,
 src: ['image/cbd-med-layout-home-logo.webp', null],
 },
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: ['image/sibras-site.webp', null]},
-{id: 5, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg', null]},
-{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg', null]},
-{id: 10, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: ['image/cafe-automatic.jpg', null]},
-{id: 11, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: ['image/sdlg-2012.webp?raw=true', 'image/sdlg-2012-2.jpg']},
-{id: 12, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: ['image/taukane-port.jpg', null]},
-{id: 13, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: ['image/varios-taukane.webp', null]},
-{id: 14, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: ['image/inicio-taukane.jpg', null]},
-{id:15,src: null,}
+{id: 4, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg', null]},
+{id: 5, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg', null]},
+{id: 6, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: ['image/cafe-automatic.jpg', null]},
+{id: 7, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: ['image/sdlg-2012.webp', 'image/sdlg-2012-2.jpg']},
+{id: 8, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: ['image/taukane-port.jpg', null]},
+{id: 9, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: ['image/varios-taukane.webp', null]},
+{id: 10, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: ['image/inicio-taukane.jpg', null]},
+{id:11,src: null,}
 ];
 
 const thumbis = [
 {id: 1, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png'},
 {id: 2, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/cbd-med.jpg'},
 {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
-{id: 5, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
-{id: 6, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
-{id: 10, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
-{id: 11, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
-{id: 12, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
-{id: 13, name: 'Direção de Arte Web', src: 'image/tauk-2008-thumb.jpg'},
-{id: 14, name: 'Direção de Arte Web', src: 'image/tauk-2004-thumb.jpg'},
-{id:15, last:<a href="/portfolio" className="d-block my-auto text-center">
+{id: 4, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
+{id: 5, name: 'Branding + Website Interface + Desenvolvimento Wordpress', src: 'image/emariot-thumb.jpg'},
+{id: 6, name: 'Direção de Arte Redes Sociais', src: 'image/cafe-automatic-thumb.jpg'},
+{id: 7, name: 'Direção de Arte Web', src: 'image/sdlg-thumb.jpg'},
+{id: 8, name: 'Direção de Arte Web', src: 'image/antigos-thumb.jpg'},
+{id: 9, name: 'Direção de Arte Web', src: 'image/tauk-2008-thumb.jpg'},
+{id: 10, name: 'Direção de Arte Web', src: 'image/tauk-2004-thumb.jpg'},
+{id:11, last:<a href="/portfolio" className="d-block my-auto text-center">
     <p>Portfolio</p>
     <img
         src="image/prev.jpg"
@@ -157,7 +157,6 @@ return (
     }}
     onSwiper={hash}
     thumbs={{ swiper: thumbsSwiper }}
-    lazy={true.toString()}
     loop={true}
     spaceBetween={40}
     keyboard={{

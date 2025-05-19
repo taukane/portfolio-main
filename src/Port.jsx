@@ -192,6 +192,7 @@ return (
                     onSwiper={hash}
                     thumbs={{ swiper: thumbsSwiper }}
                     loop={true}
+                    lazy={true.toString()}
                     spaceBetween={40}
                     keyboard={{
                         enabled: true,
