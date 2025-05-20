@@ -22,9 +22,9 @@ const panels = [
     {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png', null, null]},
     {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp', null, null]},
     {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp', null, null]},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2017</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg', null]},
-    {id: 8, name: 'Direção de Arte Redes Sociais', descricao:<p>Megamidia  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', ]},
+    {id: 7, name: 'Direção de Arte Redes Sociais', descricao:<p>Megamidia  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', ]},
        // 'image/megamidia-2.webp', 'image/megamidia-3.webp', 'image/megamidia-4.webp']},
+    {id: 8, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2016</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg', null]},
     {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg', null, null]},
     {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg', null, null]},
     {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['image/zeta-estaleiro-redesign.jpg', null, null]},
@@ -44,8 +44,8 @@ const thumbis = [
     {id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
     {id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
     {id: 6, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
-    {id: 7, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
-    {id: 8, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
+    {id: 7, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
+    {id: 8, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
     {id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
     {id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
     {id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
@@ -69,33 +69,43 @@ const thumbis = [
 ];
 
 function Port() {
-        const [thumbsSwiper, setThumbsSwiper] = useState(null);
-        const [activeHash, setActiveHash] = useState(null);
-        const panelsSwiperRef = useRef(null);
-    
-        const thumbs = useCallback((Swiper) => {
-            setThumbsSwiper(Swiper);
-        }, [])
-    
-        const hash = useCallback((Swiper) => {
-            const hash = Swiper.params.hashNavigation;
-            if(!hash) return;
-    
-            const update = () => {
-                const hash = Swiper.slides[Swiper.activeIndex].getAttribute('data-hash');
-                if(!hash) return;
-                document.location.hash = hash;
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const panelsSwiperRef = useRef(null);
+
+    const tumbers = useCallback((Swiper) => {
+        setThumbsSwiper(Swiper);
+    }, []);
+
+    const hash = useCallback((Swiper) => {
+        const hashNavigation = Swiper.params.hashNavigation;
+        if (!hashNavigation) return;
+
+        const updateHash = () => {
+            const activeSlide = Swiper.slides[Swiper.activeIndex];
+            if (activeSlide) {
+                const hash = activeSlide.getAttribute('data-hash');
+                if (hash) {
+                    document.location.hash = hash;
+                }
             }
-    
-            Swiper.on('slideChange', update);
-            Swiper.on('slideChangeTransitionEnd', update);
-        }, [])
+        };
+
+        Swiper.on('slideChange', updateHash);
+        Swiper.on('slideChangeTransitionEnd', updateHash);
+        updateHash();
+    }, []);
+
+    useEffect(() => {
+        if (panelsSwiperRef.current && panelsSwiperRef.current.swiper) {
+            hash(panelsSwiperRef.current.swiper);
+        }
+    }, [hash]);
 return (
 <>
 <span className="scroller"></span>
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
         <span className="navbar-toggler-icon"></span>
         </button>
         <DarkModeToggle />
@@ -137,9 +147,8 @@ return (
                     style={{
                         '--swiper-pagination-color': '#f90',
                         }}
-                    lazy={true.toString()}
                     modules={[FreeMode, Pagination, Thumbs]}
-                    onSwiper={setThumbsSwiper}
+                    onSwiper={tumbers}
                     spaceBetween={10}
                     pagination={{
                         clickable: true,
@@ -171,13 +180,11 @@ return (
                                     <img
                                     src={tumbis.src} 
                                     alt={tumbis.name}
-                                    loading="lazy"
                                     />
                                 ): null
                                 }
                             </a>
                             {tumbis.last}
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     ))
                 }
@@ -211,24 +218,19 @@ return (
                                 <Swiper
                                     style={{
                                         '--swiper-navigation-color': '#f40',
-                                        'height': 'auto'
                                     }}
-                                    lazy={true.toString()}
                                     spaceBetween={40}
                                     slidesPerView={1}
                                     modules={[Navigation, Pagination]}
                                     navigation={panel.src.length > 1}
                                     pagination={{ clickable: true }}
-                                    autoHeight={true}
                                 >
                                     <SwiperSlide>
                                         <img
                                             src={panel.src[0]}
                                             alt={`${panel.name} - Design 1`}
                                             className="img-fluid rounded shadow-lg"
-                                            loading="lazy"
                                         />
-                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </SwiperSlide>
                                     {panel.src[1] && (
                                         <SwiperSlide>
@@ -236,9 +238,7 @@ return (
                                                 src={panel.src[1]}
                                                 alt={`${panel.name} - Design 2`}
                                                 className="img-fluid rounded shadow-lg"
-                                                loading="lazy"
                                             />
-                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[2] && (
@@ -247,9 +247,7 @@ return (
                                                 src={panel.src[2]}
                                                 alt={`${panel.name} - Design 3`}
                                                 className="img-fluid rounded shadow-lg"
-                                                loading="lazy"
                                             />
-                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[3] && (
@@ -258,9 +256,8 @@ return (
                                                 src={panel.src[3]}
                                                 alt={`${panel.name} - Design 4`}
                                                 className="img-fluid rounded shadow-lg"
-                                                loading="lazy"
+
                                             />
-                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[4] && (
@@ -269,9 +266,8 @@ return (
                                                 src={panel.src[4]}
                                                 alt={`${panel.name} - Design 5`}
                                                 className="img-fluid rounded shadow-lg"
-                                                loading="lazy"
+
                                             />
-                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                 </Swiper>

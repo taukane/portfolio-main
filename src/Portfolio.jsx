@@ -1,3 +1,14 @@
+import { NavLink } from "react-router";
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
 const panels = [
 {id: 1, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp', null ]},
 {
@@ -42,14 +53,6 @@ const thumbis = [
 },
 ];
 
-import { NavLink } from "react-router";
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
 function Portfolio() {
@@ -79,7 +82,7 @@ return (
 <span className="scroller"></span>
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navegação">
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
             <span className="navbar-toggler-icon"></span>
         </button>
         <DarkModeToggle />
@@ -104,6 +107,7 @@ return (
     style={{
         '--swiper-pagination-color': '#f90',
     }}
+    lazy={true.toString()}
     modules={[FreeMode, Pagination, Thumbs, HashNavigation]}
     hashNavigation={{
         watchState: true,
@@ -133,7 +137,8 @@ return (
     id="works"
 >
     {thumbis.map((tumbis) => (
-        <SwiperSlide key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}>
+        <SwiperSlide key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}                         
+        loading="lazy">
             <a href="#ancora">
                 <h4>{tumbis.name}</h4>
                 {tumbis.src ? (
@@ -144,6 +149,7 @@ return (
                 ) : null}
             </a>
             {tumbis.last}
+            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
     ))}
 </Swiper>
@@ -151,6 +157,7 @@ return (
     style={{
         '--swiper-navigation-color': '#ff9900',
     }}
+    lazy={true.toString()}
     modules={[Keyboard, Navigation, Thumbs, HashNavigation]}
     hashNavigation={{
         watchState: true,
@@ -172,7 +179,10 @@ return (
             <div className="ps-4">{panel.descricao}</div>
             {panel.src && panel.src.length > 0 ? (
                 <Swiper
-                    lazy={true.toString()}
+                    style={{
+                        '--swiper-navigation-color': '#f40',
+                        'height': 'auto'
+                    }}
                     spaceBetween={40}
                     slidesPerView={1}
                     modules={[Navigation, Pagination]}
