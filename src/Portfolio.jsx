@@ -133,7 +133,7 @@ return (
     id="works"
 >
     {thumbis.map((tumbis) => (
-        <SwiperSlide key={tumbis.id} data-hash={`slide-${tumbis.id}`}>
+        <SwiperSlide key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}>
             <a href="#ancora">
                 <h4>{tumbis.name}</h4>
                 {tumbis.src ? (
@@ -157,7 +157,6 @@ return (
     }}
     onSwiper={hash}
     thumbs={{ swiper: thumbsSwiper }}
-    lazy={true.toString()}
     loop={true}
     spaceBetween={40}
     keyboard={{
@@ -173,6 +172,7 @@ return (
             <div className="ps-4">{panel.descricao}</div>
             {panel.src && panel.src.length > 0 ? (
                 <Swiper
+                    lazy={true.toString()}
                     spaceBetween={40}
                     slidesPerView={1}
                     modules={[Navigation, Pagination]}
@@ -185,7 +185,9 @@ return (
                             src={panel.src[0]}
                             alt={`${panel.name} - Design 1`}
                             className="img-fluid rounded shadow-lg"
+                            loading="lazy"
                         />
+                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </SwiperSlide>
                     {panel.src[1] && (
                         <SwiperSlide>
@@ -194,6 +196,7 @@ return (
                                 alt={`${panel.name} - Design 2`}
                                 className="img-fluid shadow"
                             />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     )}
                     {panel.src[2] && (
@@ -202,7 +205,9 @@ return (
                                 src={panel.src[2]}
                                 alt={`${panel.name} - Design 3`}
                                 className="img-fluid"
+                                loading="lazy"
                             />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     )}
                     {panel.src[3] && (
@@ -211,12 +216,13 @@ return (
                                 src={panel.src[3]}
                                 alt={`${panel.name} - Design 4`}
                                 className="img-fluid"
+                                loading="lazy"
                             />
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     )}
                 </Swiper>
             ) : null}
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
     ))}
 

@@ -137,6 +137,7 @@ return (
                     style={{
                         '--swiper-pagination-color': '#f90',
                         }}
+                    lazy={true.toString()}
                     modules={[FreeMode, Pagination, Thumbs]}
                     onSwiper={setThumbsSwiper}
                     spaceBetween={10}
@@ -163,18 +164,20 @@ return (
                 >
                 {
                     thumbis.map((tumbis) =>(
-                        <SwiperSlide key={tumbis.id}>
+                        <SwiperSlide  key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}>
                             <a href="#ancora" alt="Designer Web e Grafico" title="Designer Web e Grafico">
                                 <h4 className="link-offset-3">{tumbis.name}</h4>   
                                 {tumbis.src ? (
                                     <img
                                     src={tumbis.src} 
                                     alt={tumbis.name}
+                                    loading="lazy"
                                     />
                                 ): null
                                 }
                             </a>
                             {tumbis.last}
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     ))
                 }
@@ -189,7 +192,6 @@ return (
                     hashNavigation={{
                         watchState: true,
                     }}
-                    lazy={true.toString()}
                     onSwiper={hash}
                     thumbs={{ swiper: thumbsSwiper }}
                     loop={true}
@@ -211,7 +213,7 @@ return (
                                         '--swiper-navigation-color': '#f40',
                                         'height': 'auto'
                                     }}
-
+                                    lazy={true.toString()}
                                     spaceBetween={40}
                                     slidesPerView={1}
                                     modules={[Navigation, Pagination]}
@@ -226,6 +228,7 @@ return (
                                             className="img-fluid rounded shadow-lg"
                                             loading="lazy"
                                         />
+                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </SwiperSlide>
                                     {panel.src[1] && (
                                         <SwiperSlide>
@@ -235,7 +238,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-
+                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[2] && (
@@ -246,7 +249,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-
+                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[3] && (
@@ -257,7 +260,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-
+                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                     {panel.src[4] && (
@@ -268,12 +271,11 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-
+                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                         </SwiperSlide>
                                     )}
                                 </Swiper>
                             ) : null}
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
