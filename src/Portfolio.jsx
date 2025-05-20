@@ -157,6 +157,7 @@ return (
     }}
     onSwiper={hash}
     thumbs={{ swiper: thumbsSwiper }}
+    lazy={true.toString()}
     loop={true}
     spaceBetween={40}
     keyboard={{
@@ -175,7 +176,6 @@ return (
                     spaceBetween={40}
                     slidesPerView={1}
                     modules={[Navigation, Pagination]}
-                    lazy={true.toString()}
                     navigation={panel.src.length > 1}
                     pagination={{ clickable: true }}
                     autoHeight={true}
@@ -186,7 +186,6 @@ return (
                             alt={`${panel.name} - Design 1`}
                             className="img-fluid rounded shadow-lg"
                         />
-                        <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                     </SwiperSlide>
                     {panel.src[1] && (
                         <SwiperSlide>
@@ -195,7 +194,6 @@ return (
                                 alt={`${panel.name} - Design 2`}
                                 className="img-fluid shadow"
                             />
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                         </SwiperSlide>
                     )}
                     {panel.src[2] && (
@@ -205,7 +203,6 @@ return (
                                 alt={`${panel.name} - Design 3`}
                                 className="img-fluid"
                             />
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                         </SwiperSlide>
                     )}
                     {panel.src[3] && (
@@ -215,12 +212,11 @@ return (
                                 alt={`${panel.name} - Design 4`}
                                 className="img-fluid"
                             />
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-dark"></div>
                         </SwiperSlide>
                     )}
                 </Swiper>
             ) : null}
-            
+            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
     ))}
 

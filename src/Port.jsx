@@ -189,10 +189,10 @@ return (
                     hashNavigation={{
                         watchState: true,
                     }}
+                    lazy={true.toString()}
                     onSwiper={hash}
                     thumbs={{ swiper: thumbsSwiper }}
                     loop={true}
-                    lazy={true.toString()}
                     spaceBetween={40}
                     keyboard={{
                         enabled: true,
@@ -211,7 +211,7 @@ return (
                                         '--swiper-navigation-color': '#f40',
                                         'height': 'auto'
                                     }}
-                                    lazy={true.toString()}
+
                                     spaceBetween={40}
                                     slidesPerView={1}
                                     modules={[Navigation, Pagination]}
@@ -226,7 +226,6 @@ return (
                                             className="img-fluid rounded shadow-lg"
                                             loading="lazy"
                                         />
-                                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </SwiperSlide>
                                     {panel.src[1] && (
                                         <SwiperSlide>
@@ -236,7 +235,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+
                                         </SwiperSlide>
                                     )}
                                     {panel.src[2] && (
@@ -247,7 +246,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+
                                         </SwiperSlide>
                                     )}
                                     {panel.src[3] && (
@@ -258,7 +257,7 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+
                                         </SwiperSlide>
                                     )}
                                     {panel.src[4] && (
@@ -269,11 +268,12 @@ return (
                                                 className="img-fluid rounded shadow-lg"
                                                 loading="lazy"
                                             />
-                                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+
                                         </SwiperSlide>
                                     )}
                                 </Swiper>
                             ) : null}
+                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
