@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+
 function toTop() {
 	window.scrollTo({
 		top: 0,
@@ -6,6 +7,7 @@ function toTop() {
 		behavior: 'smooth'
 	});
 }
+
 function App() {
 	return (
 		<>
@@ -55,7 +57,7 @@ function App() {
 							</div>
 							<div className="d-block">
 								<a
-									href="https://github.com/taukane/portfolio-main"
+									href="https://github.com/taukane/portfolio-taukane"
 									title="Github Taukane"
 									rel="noopener"
 									target="_blank">

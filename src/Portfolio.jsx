@@ -10,21 +10,21 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 const panels = [
-{id: 1, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp', null ]},
+{id: 1, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp' ]},
 {
 id: 2,
 name: 'Branding + Website Interface + Desenvolvimento Wordpress',
 descricao: <p>CBD Med <small>/ 2018</small></p>,
-src: ['image/cbd-med-layout-home-logo.webp', null],
+src: ['image/cbd-med-layout-home-logo.webp'],
 },
-{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: ['image/sibras-site.webp', null]},
-{id: 4, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg', null]},
-{id: 5, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg', null]},
-{id: 6, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: ['image/cafe-automatic.jpg', null]},
+{id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: ['image/sibras-site.webp']},
+{id: 4, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg']},
+{id: 5, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Emariot <small>/ 2012</small></p>, src: ['image/emariot-2011.jpg']},
+{id: 6, name: 'Direção de Arte Redes Sociais', descricao: <p>Café Automatic <small>/ 2012</small></p>, src: ['image/cafe-automatic.jpg']},
 {id: 7, name: 'Direção de Arte UI Design', descricao: <p>SDLG <small>/ 2012</small></p>, src: ['image/sdlg-2012.webp', 'image/sdlg-2012-2.jpg']},
-{id: 8, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: ['image/taukane-port.jpg', null]},
-{id: 9, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: ['image/varios-taukane.webp', null]},
-{id: 10, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: ['image/inicio-taukane.jpg', null]},
+{id: 8, name: 'Direção de Arte Web + Desenvolvimento', descricao:<p>Carmen Steffens / Loja Villa / Franquias Brasileiras...  <small>/ 2011</small></p>, src: ['image/taukane-port.jpg']},
+{id: 9, name: 'Direção de Arte Web + Email Marketing + Desenvolvimento', descricao:<p>Diversos <small>/ 2008 / 2011</small></p>, src: ['image/varios-taukane.webp']},
+{id: 10, name: 'Websites + Projetos Gráficos + Website Interface', descricao:<p>Diversos <small>/ 2004 / 2008</small></p>, src: ['image/inicio-taukane.jpg']},
 {id:11,src: null,}
 ];
 
@@ -56,27 +56,31 @@ const thumbis = [
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
 function Portfolio() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const [activeHash, setActiveHash] = useState(null);
-    const panelsSwiperRef = useRef(null);
+const [thumbsSwiper, setThumbsSwiper] = useState(null);
+const panelsSwiperRef = useRef(null);
 
-    const thumbs = useCallback((Swiper) => {
-        setThumbsSwiper(Swiper);
-    }, [])
+const thumbs = useCallback((Swiper) => {
+    setThumbsSwiper(Swiper);
+}, []);
 
-    const hash = useCallback((Swiper) => {
-        const hash = Swiper.params.hashNavigation;
-        if(!hash) return;
+const hash = useCallback((Swiper) => {
+    const hashNavigation = Swiper.params.hashNavigation;
+    if (!hashNavigation) return;
 
-        const update = () => {
-            const hash = Swiper.slides[Swiper.activeIndex].getAttribute('data-hash');
-            if(!hash) return;
-            document.location.hash = hash;
+    const updateHash = () => {
+        const activeSlide = Swiper.slides[Swiper.activeIndex];
+        if (activeSlide) {
+            const hash = activeSlide.getAttribute('data-hash');
+            if (hash) {
+                document.location.hash = hash;
+            }
         }
+    };
 
-        Swiper.on('slideChange', update);
-        Swiper.on('slideChangeTransitionEnd', update);
-    }, [])
+    Swiper.on('slideChange', updateHash);
+    Swiper.on('slideChangeTransitionEnd', updateHash);
+    updateHash();
+}, []);
 return (
 <>
 <span className="scroller"></span>
@@ -134,8 +138,7 @@ return (
             spaceBetween: 10,
         },
     }}
-    id="works"
->
+    id="works">
     {thumbis.map((tumbis) => (
         <SwiperSlide key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}                         
         loading="lazy">
@@ -157,7 +160,6 @@ return (
     style={{
         '--swiper-navigation-color': '#ff9900',
     }}
-    lazy={true.toString()}
     modules={[Keyboard, Navigation, Thumbs, HashNavigation]}
     hashNavigation={{
         watchState: true,
@@ -171,75 +173,39 @@ return (
     }}
     navigation={true}
     autoHeight={true}
-    ref={panelsSwiperRef}
->
+    ref={panelsSwiperRef}>
     {panels.map((panel) => (
         <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora">
             <h5 className="pt-4 ps-4 fw-bold text-light">{panel.name}</h5>
             <div className="ps-4">{panel.descricao}</div>
             {panel.src && panel.src.length > 0 ? (
                 <Swiper
-                    style={{
-                        '--swiper-navigation-color': '#f40',
-                        'height': 'auto'
-                    }}
+                    style={{ '--swiper-navigation-color': '#f40', 'height': 'auto' }}
+                    lazy={true.toString()}
                     spaceBetween={40}
                     slidesPerView={1}
                     modules={[Navigation, Pagination]}
                     navigation={panel.src.length > 1}
                     pagination={{ clickable: true }}
-                    autoHeight={true}
-                >
-                    <SwiperSlide>
-                        <img
-                            src={panel.src[0]}
-                            alt={`${panel.name} - Design 1`}
-                            className="img-fluid rounded shadow-lg"
-                            loading="lazy"
-                        />
-                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                    </SwiperSlide>
-                    {panel.src[1] && (
-                        <SwiperSlide>
+                    autoHeight={true}>
+                    {panel.src.map((src, index) => (
+                        <SwiperSlide key={index}>
                             <img
-                                src={panel.src[1]}
-                                alt={`${panel.name} - Design 2`}
-                                className="img-fluid shadow"
-                            />
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </SwiperSlide>
-                    )}
-                    {panel.src[2] && (
-                        <SwiperSlide>
-                            <img
-                                src={panel.src[2]}
-                                alt={`${panel.name} - Design 3`}
-                                className="img-fluid"
+                                src={src}
+                                alt={`${panel.name} - Design ${index + 1}`}
+                                className={`img-fluid ${index === 0 ? 'rounded shadow-lg' : (index === 1 ? 'shadow' : '')}`}
                                 loading="lazy"
                             />
                             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </SwiperSlide>
-                    )}
-                    {panel.src[3] && (
-                        <SwiperSlide>
-                            <img
-                                src={panel.src[3]}
-                                alt={`${panel.name} - Design 4`}
-                                className="img-fluid"
-                                loading="lazy"
-                            />
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </SwiperSlide>
-                    )}
+                    ))}
                 </Swiper>
             ) : null}
         </SwiperSlide>
     ))}
-
 </Swiper>
 <hr className="border-0"/>
 </>
-)
-}
+)}
 
 export default Portfolio

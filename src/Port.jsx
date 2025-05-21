@@ -15,24 +15,23 @@ import  * as bootstrap from 'bootstrap';
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
 const panels = [
-    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: ['image/mitsul.jpg', null, null]},
-    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', null, null]},
-    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', null, null]},
-    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: ['image/layout-blog-autoconf-v2-01.jpg', null, null]},
-    {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png', null, null]},
-    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp', null, null]},
-    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp', null, null]},
-    {id: 7, name: 'Direção de Arte Redes Sociais', descricao:<p>Megamidia  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', ]},
-       // 'image/megamidia-2.webp', 'image/megamidia-3.webp', 'image/megamidia-4.webp']},
+    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: ['image/mitsul.jpg']},
+    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png']},
+    {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda Veiculos <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg']},
+    {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" referrerPolicy="no-referrer">Autoconf</a> <small>/ 2021</small></p>, src: ['image/layout-blog-autoconf-v2-01.jpg']},
+    {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png']},
+    {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
+    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp']},
+    {id: 7, name: 'Direção de Arte Redes Sociais', descricao:<p>Megamidia  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', 'image/megamidia-2.webp', 'image/megamidia-3.webp', 'image/megamidia-4.webp']},
     {id: 8, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2016</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg', null]},
-    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg', null, null]},
-    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg', null, null]},
-    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['image/zeta-estaleiro-redesign.jpg', null, null]},
-    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: ['image/curitiba-cultura.jpg', null, null]},
+    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg']},
+    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg']},
+    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['image/zeta-estaleiro-redesign.jpg']},
+    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: ['image/curitiba-cultura.jpg']},
     {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.webp', 'image/shopping-total.jpg', null]},
     {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg']},
     {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: ['image/boticario.jpg', 'image/boticario-2.jpg', 'image/boticario-3.jpg']},
-    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: ['image/gazeta.webp', null, null]},
+    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: ['image/gazeta.webp']},
     {id: 17},
 ];
 
@@ -95,11 +94,31 @@ function Port() {
         updateHash();
     }, []);
 
-    useEffect(() => {
-        if (panelsSwiperRef.current && panelsSwiperRef.current.swiper) {
-            hash(panelsSwiperRef.current.swiper);
+    const scrollToPanel = useCallback(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
         }
-    }, [hash]);
+    }, []);
+
+    useEffect(() => {
+        scrollToPanel();
+        window.addEventListener('hashchange', scrollToPanel); 
+        return () => {
+            window.removeEventListener('hashchange', scrollToPanel);
+        };
+    }, [scrollToPanel]);
 return (
 <>
 <span className="scroller"></span>
@@ -131,7 +150,7 @@ return (
     <div className="container">
         <div className="row">
             <div className="col-8 mx-auto lh-lg">
-                <h2>Desde 2002 Desenvolvendo Interfaces para Design <b>Web</b> e <b>Gráfico.</b></h2>
+                <h2>Desde 2002 desenvolvendo Interfaces de Design para <b>Web</b> e <b>Gráfico.</b></h2>
                 <hr/>
                 <h3>Experiência sólida em desenvolvimento web full-stack (front-end e back-end), desde a concepção da arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.</h3>
                 <hr/>
@@ -208,8 +227,7 @@ return (
                     }}
                     navigation={true}
                     autoHeight={true}
-                    ref={panelsSwiperRef}
-                >
+                    ref={panelsSwiperRef}>
                     {panels.map((panel) => (
                         <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora" className="pb-3">
                             <h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
@@ -223,8 +241,7 @@ return (
                                     slidesPerView={1}
                                     modules={[Navigation, Pagination]}
                                     navigation={panel.src.length > 1}
-                                    pagination={{ clickable: true }}
-                                >
+                                    pagination={{ clickable: true }}>
                                     <SwiperSlide>
                                         <img
                                             src={panel.src[0]}
@@ -256,7 +273,6 @@ return (
                                                 src={panel.src[3]}
                                                 alt={`${panel.name} - Design 4`}
                                                 className="img-fluid rounded shadow-lg"
-
                                             />
                                         </SwiperSlide>
                                     )}
@@ -266,7 +282,6 @@ return (
                                                 src={panel.src[4]}
                                                 alt={`${panel.name} - Design 5`}
                                                 className="img-fluid rounded shadow-lg"
-
                                             />
                                         </SwiperSlide>
                                     )}
@@ -278,7 +293,6 @@ return (
             </div>
         </div>
     </div>
-
 </>
 )}
 
