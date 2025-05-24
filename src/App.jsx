@@ -19,13 +19,17 @@ function App() {
             if (nextBox) {
                 nextBox.scrollIntoView({ 
 					behavior: "smooth",
-					block: 'nearest',
+					block: 'center',
 					inline: 'center'	
 				});
                 setCurrentBox(currentBox + 1);
             }
         } else {
-            boxesRef.current[0]?.scrollIntoView({ behavior: "smooth" });
+            boxesRef.current[0]?.scrollIntoView({					
+					behavior: "smooth",
+					block: 'center',
+					inline: 'center'
+				 });
             setCurrentBox(0);
         }
     };

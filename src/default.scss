@@ -7,9 +7,7 @@ $font-family-base: 'Courier New', Courier, monospace !default;
 
 @import "bootstrap/scss/bootstrap";
 
-html {
-    min-height: 100%;
-}
+html {min-height: 100%}
 
 [data-bs-theme=dark] .apresenta {
     color: var(--bs-light);
@@ -72,7 +70,7 @@ img  {
     
 .box {
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,10 +85,8 @@ img  {
     h2 {
         font-size: 4.3rem;
         color: #e0ffff;
-        text-shadow:
-            0 0 1ex rgb(59, 168, 198),
-            0 0 2px rgba(255, 255, 255, 0.8);
-      }
+        text-shadow:0 0 1ex rgb(59, 168, 198), 0 0 2px rgba(255, 255, 255, 0.8);
+    }
     p {
     text-align: center;
     display: block;
@@ -264,16 +260,12 @@ img  {
     display: block;
     margin: 0 auto;
     @include color-mode(dark) {
-        .swiper-slide img{
-        background: $dark;
-        }
+        .swiper-slide img{background: $dark}
     }
 }
 
 @include color-mode(light) {
-    .swiper-slide img{
-    background: $light;
-    }
+    .swiper-slide img{background: $light}
 }
 .swiper-slide-thumb-active{
     img{
@@ -291,8 +283,8 @@ img  {
 }
 
 .swiper-button-prev{
-    left:auto !important;
-    right:120px !important;
+    left: auto !important;
+    right: 120px !important;
 }
 
 .contact-infos {
@@ -312,7 +304,7 @@ img  {
     .apresenta {width: 100%;}
     .box {
         width: 100%;
-        height: 70vh;
+        height: 90vh;
         text-align: left;
     }
     #works {
@@ -322,23 +314,11 @@ img  {
         filter: sepia(0) hue-rotate(0deg) saturate(100%);
         opacity: .55;
         }
-        h4{
-            top: -20px;
-            font-size: .768rem;
-            font-weight: lighter;
-            margin-left: 5px;
-            width: 100%;
-        }
-        a{
-            text-decoration: none;
-        }
+        h4{display: none}
+        a{text-decoration: none}
     }
     .swiper-slide-thumb-active{
-        img{
-            border:solid 5px #0f0f10 !important;
-        }
+        img{border:solid 5px #0f0f10 !important}
     }
-    .swiper-button-next, .swiper-button-prev{
-        display: none !important;
-    }
+    .swiper-button-next, .swiper-button-prev{display: none !important}
 }
