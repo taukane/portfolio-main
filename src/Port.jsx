@@ -124,7 +124,7 @@ return (
 <span className="scroller"></span>
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
+        <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
         <span className="navbar-toggler-icon"></span>
         </button>
         <DarkModeToggle />

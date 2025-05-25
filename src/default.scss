@@ -31,7 +31,9 @@ img  {
     image-rendering: optimizeQuality;  
     -ms-interpolation-mode: bicubic;  
     max-width: 100%; 
-}     
+}  
+
+.navbar{z-index: 1}
 
 .scroller {
     height: 8px;
@@ -100,6 +102,7 @@ img  {
 
 @media (prefers-reduced-motion: no-preference) {
     .apresenta h1 {
+        z-index: 0;
         &:hover {
             animation: logo-BOom infinite 3s;
         }

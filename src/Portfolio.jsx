@@ -84,14 +84,15 @@ const hash = useCallback((Swiper) => {
 return (
 <>
 <span className="scroller"></span>
-<nav className="navbar navbar-expand-lg bg-body-tertiary">
+
+<nav className="navbar navbar-expand-lg mb-5  bg-body-tertiary bg-gradient shadow-lg">
     <div className="container-fluid">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
+        <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
             <span className="navbar-toggler-icon"></span>
         </button>
         <DarkModeToggle />
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav mt-3 hstack gap-5 d-block d-md-flex">
+            <ul className="navbar-nav my-3 hstack gap-5 d-block d-md-flex">
                 <li className="nav-item h3">
                 <NavLink className="nav-link" href="/" to="/">
                     Taukane
@@ -126,16 +127,16 @@ return (
     watchSlidesProgress={true}
     breakpoints={{
         '@0.00': {
-            slidesPerView: 2,
-            spaceBetween: 3,
+        slidesPerView: 3,
+        spaceBetween: 8,
         },
         '@1.00': {
-            slidesPerView: 3,
-            spaceBetween: 8,
+        slidesPerView: 4,
+        spaceBetween: 10,
         },
         '@1.50': {
-            slidesPerView: 6,
-            spaceBetween: 10,
+        slidesPerView: 6,
+        spaceBetween: 20,
         },
     }}
     id="works">
