@@ -1,36 +1,66 @@
 import { NavLink } from "react-router";
+import React, { useEffect, useRef, useState } from "react";
+
 function toTop() {
-	window.scrollTo({
-		top: 0,
-		left: 0,
-		behavior: 'smooth'
-	});
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
 }
+
 function App() {
+	const boxesRef = useRef([]);
+    const [currentBox, setCurrentBox] = useState(0);
+
+    const scrollToNextBox = () => {
+        if (currentBox < boxesRef.current.length - 1) {
+            const nextBox = boxesRef.current[currentBox + 1];
+            if (nextBox) {
+                nextBox.scrollIntoView({ 
+					behavior: "smooth",
+					block: 'center',
+					inline: 'center'	
+				});
+                setCurrentBox(currentBox + 1);
+            }
+        } else {
+            boxesRef.current[0]?.scrollIntoView({					
+					behavior: "smooth",
+					block: 'center',
+					inline: 'center'
+				 });
+            setCurrentBox(0);
+        }
+    };
+
+    useEffect(() => {
+        boxesRef.current = document.querySelectorAll('.box');
+    }, []);
 	return (
 		<>
 			<span className="scroller"></span>
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col">
-						<div className="box my-5">
+						<div className="box box-1 my-5" onClick={scrollToNextBox}>
 							<h2>Taukane</h2>
 							<p>Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.
 							</p>
 						</div>
-						<div className="box box-2">
+						<div className="box box-2 my-5" onClick={scrollToNextBox}>
 							<h2>Designer</h2>
 							<p>Arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.
 							</p>
 						</div>
-						<div className="box box-3">
+						<div className="box box-3 my-5" onClick={scrollToNextBox}>
 							<h2>Web e Gráfico</h2>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="apresenta rounded mb-5 pb-5">
-			<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
+			<div className="apresenta box rounded mb-5 pb-5">
+				<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
 				<div className="container">
 					<div className="row">
 						<div className="col-md-10 d-flex justify-content-md-end justify-content-center gap-5 mt-5 contact-infos">
@@ -55,7 +85,7 @@ function App() {
 							</div>
 							<div className="d-block">
 								<a
-									href="https://github.com/taukane/portfolio-main"
+									href="https://github.com/taukane/portfolio-taukane"
 									title="Github Taukane"
 									rel="noopener"
 									target="_blank">
